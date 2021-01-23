@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 
 // Yelp Fusion Business API
+require('dotenv').config()
 const yelp = require("yelp-fusion");
-const apiKey = "";
+const apiKey = process.env.API_KEY;
 
 
 const PORT = process.env.PORT || 3001;
