@@ -1,13 +1,21 @@
 const express = require("express");
 const app = express();
-
-// Yelp Fusion Business API
-require('dotenv').config()
-const yelp = require("yelp-fusion");
-const apiKey = process.env.API_KEY;
+const apiRoutes = require("./routes/apiRoutes");
+const mongoose = require("mongoose");
 
 
-const PORT = process.env.PORT || 3001;
+const URL = process.env.MONGODB_URI || "mongodb://localhost/petDB";
+
+// Connect to MongoDB
+mongoose.connect(URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+})
+.then(() => console.log("Connected to MongoDB!"))
+.catch(error => console.log(error.message));
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -18,17 +26,8 @@ app.use(express.json());
 // }
 
 
-app.post("/yelp", (req, res) => {
-    const searchRequest = {...req.body, limit: 5};
-      
-      const client = yelp.client(apiKey);
-      
-      client.search(searchRequest).then(response => {
-          res.json(response);
-      }).catch(e => {
-        console.log(e);
-      });
-})
+app.use(apiRoutes);
 
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`Server listening on PORT ${PORT}`));
