@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import ContractorList from "./ContractorList";
 import axios from "axios";
 
-class Test extends Component {
+class ContractorSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {businesses: [], term: "", location: ""};
@@ -10,8 +11,6 @@ class Test extends Component {
     }
     // On change of a form input, set the state to be the input's value
     handleChange(evt) {
-        evt.preventDefault();
-
         this.setState({
             [evt.target.name] : evt.target.value
         });
@@ -29,19 +28,10 @@ class Test extends Component {
         });
     }
     render() {
-        // Iterate through the businesses in the state and create an element for each result with the data
-        const businesses = this.state.businesses.map(b => (
-            <div key={b.id} style={{marginBottom: "50px"}}>
-                <h1>{b.name}</h1>
-                <p>{b.display_phone}</p>
-                <p>{b.location.display_address[0]}, {b.location.display_address[1]}</p>
-                <p>{b.rating} / 5 Stars</p>
-                <a href={b.url}>See Reviews</a>
-            </div>
-        ));
         return (
             <div>
-                <h1>Search for a Contractor</h1>
+                <h1>Find a Professional</h1>
+                <p>We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="term">Search Term</label>
                     <select id="term" name="term" onChange={this.handleChange}>
@@ -71,10 +61,11 @@ class Test extends Component {
                     />
                     <button>Get Businesses</button>
                 </form>
-                {businesses}
+                
+                <ContractorList businesses={this.state.businesses} />
             </div>
         );
     }
 }
 
-export default Test;
+export default ContractorSearch;
