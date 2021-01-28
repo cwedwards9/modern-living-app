@@ -10,8 +10,8 @@ class ContractorList extends Component {
                         key={b.id}
                         name={b.name}
                         phone={b.display_phone}
-                        street={b.location.display_address[0]}
-                        state={b.location.display_address[1]}
+                        locationOne={b.location.display_address[0]}
+                        locationTwo={b.location.display_address[1]}
                         rating={b.rating}
                         url={b.url}
                     />

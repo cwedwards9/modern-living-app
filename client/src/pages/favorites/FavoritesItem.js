@@ -11,17 +11,15 @@ class FavoritesItem extends Component {
     }
 
     render() {
-        const { name, phone, street, state, rating, url } = this.props;
+        const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
             <div className="FavoritesItem">
-                <form onSubmit={this.handleRemove}>
-                    <button>Remove</button>
-                </form>
+                <button onClick={this.handleRemove}>Remove</button>
                 <p>{name}</p>
                 <p>{phone}</p>
-                <p>{street} {state}</p>
-                <p>{rating}</p>
-                <p>{url}</p>
+                <p>{locationOne}, {locationTwo}</p>
+                <p>{rating} / 5</p>
+                <a href={url}>See Reviews</a>
             </div>
         );
     }

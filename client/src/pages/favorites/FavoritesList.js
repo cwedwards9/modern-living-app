@@ -16,8 +16,7 @@ class FavoritesList extends Component {
     }
     deleteContractor(id) {
         axios.delete(`/contractors/${id}`)
-            .then((res) => {
-                console.log(res);
+            .then(() => {
                 this.setState({
                     contractors: this.state.contractors.filter(c => c._id !== id)
                 });
@@ -34,8 +33,8 @@ class FavoritesList extends Component {
                         id={c._id}
                         name={c.name}
                         phone={c.phone}
-                        street={c.street} 
-                        state={c.state}
+                        locationOne={c.locationOne} 
+                        locationTwo={c.locationTwo}
                         rating={c.rating}
                         url={c.url}
                         delete={this.deleteContractor}
