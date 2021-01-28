@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const Contractor = require("../models/contractor");
 
 // Yelp Fusion Business API
 const yelp = require("yelp-fusion");
@@ -18,6 +19,28 @@ router.post("/yelp", (req, res) => {
     .catch(e => {
       console.log(e);
     });
+});
+
+
+// Show all contractors the user saved in favorites
+router.get("/contractors", (req, res) => {
+  Contractor.find({})
+    .then(contractors => {
+      res.json(contractors);
+    })
+});
+
+// Add/Save a new contractor to the favorites
+router.post("/contractors", (req, res) => {
+  Contractor.create(req.body);
+});
+
+// Delete a contractor from favorites
+router.delete("/contractors/:id", (req, res) => {
+  Contractor.findByIdAndDelete(req.params.id)
+    .then(res => {
+      res.json(res);
+    })
 });
 
 
