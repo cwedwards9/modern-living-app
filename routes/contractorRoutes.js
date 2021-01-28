@@ -32,14 +32,17 @@ router.get("/contractors", (req, res) => {
 
 // Add/Save a new contractor to the favorites
 router.post("/contractors", (req, res) => {
-  Contractor.create(req.body);
+  Contractor.create(req.body)
+    .then(() => {
+      res.end();
+    })
 });
 
 // Delete a contractor from favorites
 router.delete("/contractors/:id", (req, res) => {
   Contractor.findByIdAndDelete(req.params.id)
-    .then(res => {
-      res.json(res);
+    .then(() => {
+      res.end();
     })
 });
 
