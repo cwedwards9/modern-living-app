@@ -1,5 +1,6 @@
 module.exports = {
     User: require("./user"),
     Project: require("./project"),
-    Contractor: require("./contractor")
+    Contractor: require("./contractor"),
+    Design: require("./design")
 };
