@@ -10,11 +10,11 @@ const ContractorSchema = new mongoose.Schema ({
         type: String,
         trim: true,
     },
-    street: {
+    locationOne: {
         type: String,
         trim: true,
     },
-    state: {
+    locationTwo: {
         type: String,
         trim: true
     },
