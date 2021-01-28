@@ -8,9 +8,8 @@ class ContractorItem extends Component {
         this.handleSave = this.handleSave.bind(this);
     }
     handleSave() {
-        const { id, name, phone, street, state, rating, url } = this.props;
+        const { name, phone, street, state, rating, url } = this.props;
         this.setState({
-            _id: id,
             name: name,
             phone: phone,
             street: street,

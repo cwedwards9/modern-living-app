@@ -8,7 +8,6 @@ class ContractorList extends Component {
                 {this.props.businesses.map(b => (
                     <ContractorItem
                         key={b.id}
-                        id={parseInt(b.id)}
                         name={b.name}
                         phone={b.display_phone}
                         street={b.location.display_address[0]}
