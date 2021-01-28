@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const contractorRoutes = require("./routes/contractorRoutes");
+const designRoutes = require("./routes/designRoutes");
+const projectRoutes = require("./routes/projectRoutes");
+const userRoutes = require("./routes/userRoutes");
 const mongoose = require("mongoose");
 
 
-const URL = process.env.MONGODB_URI || "mongodb://localhost/petDB";
+const URL = process.env.MONGODB_URI || "mongodb://localhost/homeDB";
 
 // Connect to MongoDB
 mongoose.connect(URL, {
@@ -26,7 +29,10 @@ app.use(express.json());
 // }
 
 
-app.use(apiRoutes);
+app.use(contractorRoutes);
+app.use(designRoutes);
+app.use(projectRoutes);
+app.use(userRoutes);
 
 const PORT = process.env.PORT || 3001;
 
