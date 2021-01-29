@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 class Navbar extends Component {
     render() {
         return (
-            <nav>
+            <nav style={{display: "flex", justifyContent: "space-around"}}>
                 <NavLink exact className="link" activeClassName="active-link" to="/">Home</NavLink>
-                <NavLink exact className="link" activeClassName="active-link" to="/yelp">Yelp</NavLink>
+                <NavLink exact className="link" activeClassName="active-link" to="/landing">Landing</NavLink>
             </nav>
         );
     }

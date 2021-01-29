@@ -9,6 +9,7 @@ import Starter from "./pages/Starter";
 import ContractorSearch from "./pages/contractor/ContractorSearch";
 import Projects from "./pages/Projects";
 import FavoritesList from "./pages/favorites/FavoritesList";
+import NewProjectForm from "./pages/NewProjectForm";
 
 import Navbar from "./components/Navbar";
 import './App.css';
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path="/yelp" render= { () => <ContractorSearch /> } />
           <Route exact path="/projects" render= { () => <Projects /> } />
           <Route exact path="/favorites" render= { () => <FavoritesList /> } />
+          <Route exact path="/newproject" render= { () => <NewProjectForm /> } />
         </Switch>
       </div>
     );

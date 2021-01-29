@@ -20,7 +20,10 @@ class Landing extends Component {
                 </section>
                 <section>
                     <Link to="/favorites">favorites</Link>
-                </section> 
+                </section>
+                <section>
+                    <Link to="/newproject">Start a New Project</Link>
+                </section>
             </div>
         );
     }
