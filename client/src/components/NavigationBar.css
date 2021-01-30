@@ -1,0 +1,18 @@
+.navbar { 
+    background-color: #ede9e3;
+    padding: 0px;
+    margin: 0px;
+  }
+  ​
+  a, .navbar-nav, .navbar-light {
+    color: #626366;
+    padding: 10px;
+  }
+  ​
+  a.nav-link {
+    text-align: left;
+    margin-right: 10px;
+  }
+  .navbar-brand {
+    margin-left: 50px;
+  }
