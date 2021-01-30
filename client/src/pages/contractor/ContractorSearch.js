@@ -9,7 +9,7 @@ class ContractorSearch extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-    // On change of a form input, set the state to be the input's value
+    // Handling changes to the inputs
     handleChange(evt) {
         this.setState({
             [evt.target.name] : evt.target.value

@@ -3,9 +3,10 @@ import React, { Component } from "react";
 class FavoritesItem extends Component {
     constructor(props) {
         super(props);
-        this.handleRemove = this.handleRemove.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
-    handleRemove(evt) {
+    // Calls the delete method and passes in the contractor id
+    handleDelete(evt) {
         evt.preventDefault();
         this.props.delete(this.props.id);
     }
@@ -14,7 +15,7 @@ class FavoritesItem extends Component {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
             <div className="FavoritesItem">
-                <button onClick={this.handleRemove}>Remove</button>
+                <button onClick={this.handleDelete}>Remove</button>
                 <p>{name}</p>
                 <p>{phone}</p>
                 <p>{locationOne}, {locationTwo}</p>

@@ -5,9 +5,10 @@ class ContractorItem extends Component {
     constructor(props) {
         super(props);
         this.state = {name: "", phone: "", locationOne: "", locationTwo: "", rating: "", url: ""};
-        this.handleSave = this.handleSave.bind(this);
+        this.saveContractor = this.saveContractor.bind(this);
     }
-    handleSave() {
+    // On click of the save button, set the state and send a POST request to '/contractors' with the state
+    saveContractor() {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         this.setState({
             name: name,
@@ -25,7 +26,7 @@ class ContractorItem extends Component {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
             <div className="ContractorItem" style={{marginBottom: "50px"}}>
-                <button onClick={this.handleSave}>Save</button>
+                <button onClick={this.saveContractor}>Save</button>
                 <h1>{name}</h1>
                 <p>{phone}</p>
                 <p>{locationOne}, {locationTwo}</p>

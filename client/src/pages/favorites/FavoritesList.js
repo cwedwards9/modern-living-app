@@ -8,12 +8,14 @@ class FavoritesList extends Component {
         this.state = { contractors: [] };
         this.deleteContractor = this.deleteContractor.bind(this);
     }
+    // On page load (after render() ), send a GET request to '/contractors' to get the contractors in the db, save to state
     async componentDidMount() {
         await axios.get("/contractors")
             .then(res => {
                 this.setState({contractors: res.data});
             })
     }
+    // Handle deletion of a contractor from the db, update the state to reflect the deletion
     deleteContractor(id) {
         axios.delete(`/contractors/${id}`)
             .then(() => {
