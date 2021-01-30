@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ContractorList from "./ContractorList";
+import ContractorItem from "./ContractorItem";
 import axios from "axios";
 
 class ContractorSearch extends Component {
@@ -29,7 +29,7 @@ class ContractorSearch extends Component {
     }
     render() {
         return (
-            <div>
+            <main className="ContractorSearch">
                 <h1>Find a Professional</h1>
                 <p>We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
                 <form onSubmit={this.handleSubmit}>
@@ -62,8 +62,20 @@ class ContractorSearch extends Component {
                     <button>Get Businesses</button>
                 </form>
                 
-                <ContractorList businesses={this.state.businesses} />
-            </div>
+                <section className="ContractorList">
+                    {this.state.businesses.map(b => (
+                        <ContractorItem 
+                            key={b.id}
+                            name={b.name}
+                            phone={b.display_phone}
+                            locationOne={b.location.display_address[0]}
+                            locationTwo={b.location.display_address[1]}
+                            rating={b.rating}
+                            url={b.url}
+                        />
+                    ))}
+                </section>
+            </main>
         );
     }
 }
