@@ -15,13 +15,15 @@ class ContractorSearch extends Component {
             [evt.target.name] : evt.target.value
         });
     }
-    // On submit of the form, send a POST request to '/yelp' to get data from the API
+    // On submit of the form, send a GET request to '/yelp' to get data from the API
     handleSubmit(evt) {
         evt.preventDefault();
 
-        axios.post("/yelp", {
-            term: this.state.term,
-            location: this.state.location
+        axios.get("/yelp", {
+            params: {
+                term: this.state.term,
+                location: this.state.location
+            }
         })
         .then(res => {
             this.setState({ businesses: res.data.jsonBody.businesses });

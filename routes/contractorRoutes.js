@@ -8,8 +8,8 @@ require('dotenv').config();
 const apiKey = process.env.API_KEY;
 
 // POST route for getting Yelp API data
-router.post("/yelp", (req, res) => {
-    const searchRequest = {...req.body, limit: 5};
+router.get("/yelp", (req, res) => {
+    const searchRequest = {...req.query, limit: 5};
       
     const client = yelp.client(apiKey);
     
