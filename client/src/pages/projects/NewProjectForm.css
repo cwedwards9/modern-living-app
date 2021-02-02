@@ -1,0 +1,54 @@
+/* NewProjectForm */
+
+.NewProjectForm {
+    padding: 1rem;
+    width: 40vw;
+    margin: 3rem auto;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.NewProjectForm h1 {
+    font-size: 2rem;
+}
+
+.NewProjectForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.NewProjectForm form label {
+    margin-bottom: 0.25rem;
+}
+
+.NewProjectForm form input,
+.NewProjectForm form textarea,
+.NewProjectForm form select {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.NewProjectForm form button {
+    margin: 0 auto;
+    border: none;
+    border-radius: 2px;
+    background-color: #626366;
+    color: white;
+    padding: 0.25rem 0.75rem;
+}
+
+
+@media (max-width: 900px) {
+    .NewProjectForm {
+        width: 55vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .NewProjectForm {
+        width: 75vw;
+    }
+}

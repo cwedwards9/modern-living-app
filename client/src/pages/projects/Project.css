@@ -1,0 +1,97 @@
+/* Projects List */
+
+.ProjectsList {
+    padding: 2rem;
+}
+
+.ProjectItem {
+    width: 45vw;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ProjectItem .project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ProjectItem .project-title {
+    font-size: 1.5rem;
+}
+
+.ProjectItem .delete-proj-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.fa-trash {
+    color: black;
+}
+
+.ProjectItem .project-category {
+    margin-bottom: 0.5rem;
+}
+
+.ProjectItem .costs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ProjectItem .costs p { 
+    margin-right: 1rem;
+}
+
+.ProjectItem .edit-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    padding: 0 0 0.25rem 0;
+    color: black;
+}
+
+.ProjectItem .project-notes {
+    background-color: lightgray;
+    margin: 0;
+    padding: 0.5rem;
+    min-height: 10rem;
+    width: 100%;
+}
+
+
+/* Project Edit Form */
+.Project-edit-form {
+    width: 45vw;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Project-edit-form  h1 {
+    font-size: 1.5rem;
+}
+
+.Project-edit-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.Project-edit-form form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.Project-edit-form form button {
+    border: none;
+    border-radius: 2px;
+    background-color: lightgray;
+    color: black;
+    padding: 0.25rem 0.75rem;
+}
