@@ -1,18 +1,46 @@
-.navbar { 
-    background-color: #ede9e3;
-    padding: 0px;
-    margin: 0px;
-  }
-  ​
-  a, .navbar-nav, .navbar-light {
-    color: #626366;
-    padding: 10px;
-  }
-  ​
-  a.nav-link {
-    text-align: left;
-    margin-right: 10px;
-  }
-  .navbar-brand {
-    margin-left: 50px;
-  }
+.navbar {
+  background-color: #EDE9E3;
+  padding-top: 0rem;
+  position: -webkit-sticky;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+a, .navbar-nav, .navbar-light {
+  color: #626366;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing:  .5px;
+}
+a.nav-link {
+  text-align: left;
+  color:  #626366;
+}
+a.nav-link:hover {
+  text-decoration: none;
+  border-bottom-width: 3px;
+  border-bottom-color: #7A9392;
+  border-bottom-style: solid;
+  padding-bottom: 1px;
+  color: #626366;
+}
+.navbar-brand {
+margin-left:40px;
+}
+.nav-item {
+  padding-left: 30px;
+}
+nav {
+  display: flex;
+}
+.signup {
+ background-color: #7A9392;
+ padding: 10px;
+ margin: 0px  !important;
+}
+.btn-sm {
+  margin-right: 20px;
+}
