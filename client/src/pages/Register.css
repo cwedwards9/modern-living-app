@@ -1,0 +1,57 @@
+/* Register and Login Page */
+.Register-Page,
+.Login-Page {
+    height: 100vh;
+    padding-top: 3rem;
+    box-sizing: border-box
+}
+
+.Register,
+.Login {
+    padding: 2rem;
+    width: 35vw;
+    margin: 0 auto 1rem;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    
+}
+
+.Register form,
+.Login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Register form input,
+.Login form input {
+    margin-bottom: 1rem;
+}
+
+.Register form button,
+.Login form button {
+    margin: 0 auto 0.5rem;
+    border: none;
+    border-radius: 2px;
+    background-color: #626366;
+    color: white;
+    padding: 0.25rem 0.75rem;
+}
+
+.user-access-links {
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .Register,
+    .Login {
+        width: 55vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .Register,
+    .Login {
+        width: 85vw;
+    }
+}

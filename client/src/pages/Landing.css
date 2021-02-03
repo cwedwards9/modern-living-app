@@ -1,0 +1,24 @@
+.card{
+    width: 15em;
+    height: 10em;
+    margin: 3em;
+    color: #7a9392;
+    position: relative;
+    top: 10em;
+    outline: 5px solid white;
+    outline-offset: -10px;
+}
+
+.header{
+    width: 15em;
+    height: 1.5em;
+    border: solid;
+    border-color: #626366;
+    color: white;
+    background-color: #626366;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    right: 6em;
+    top: 1.5em;
+}

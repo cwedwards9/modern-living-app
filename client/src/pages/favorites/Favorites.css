@@ -1,0 +1,49 @@
+/* 
+FavoritesList
+    h1
+    FavoritesItem
+        favorites-heading
+            h2
+            button
+        p x 3
+        a
+*/
+
+.FavoritesList {
+    padding: 2rem 0 3rem;
+}
+
+.FavoritesList h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.FavoritesItem {
+    width: 50vw;
+    margin: 0 auto 2.5rem;
+    padding: 0.75rem 4rem 0.5rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorites-heading h2 {
+    font-size: 2rem;
+}
+
+.favorites-heading button {
+    background-color: transparent;
+    border: none;
+}
+
+.FavoritesItem p {
+    display: block;
+    margin-bottom: 0.5rem;
+}
