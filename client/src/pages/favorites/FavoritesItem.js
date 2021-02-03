@@ -15,8 +15,10 @@ class FavoritesItem extends Component {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
             <div className="FavoritesItem">
-                <button onClick={this.handleDelete}>Remove</button>
-                <p>{name}</p>
+                <div className="favorites-heading">
+                    <h2>{name}</h2>
+                    <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
+                </div>
                 <p>{phone}</p>
                 <p>{locationOne}, {locationTwo}</p>
                 <p>{rating} / 5</p>

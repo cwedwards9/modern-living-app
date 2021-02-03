@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FavoritesItem from "./FavoritesItem";
+import "./Favorites.css";
 import axios from "axios";
 
 class FavoritesList extends Component {
@@ -8,9 +9,9 @@ class FavoritesList extends Component {
         this.state = { contractors: [] };
         this.deleteContractor = this.deleteContractor.bind(this);
     }
-    // On page load (after render() ), send a GET request to '/contractors' to get the contractors in the db, save to state
-    async componentDidMount() {
-        await axios.get("/contractors")
+    // Send a GET request to '/contractors' to get the contractors in the db, save to state
+    componentDidMount() {
+        axios.get("/contractors")
             .then(res => {
                 this.setState({contractors: res.data});
             })
