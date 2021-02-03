@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Link } from 'react-router-dom';
+import { NavigationBar } from '../components/NavigationBar';
+
+import { Container, Row, Col, Form } from "reactstrap";
 import Divider from '@material-ui/core/Divider';
 import Button from 'react-bootstrap/Button';
-import { NavigationBar } from '../components/NavigationBar';
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
 import Testimony from './TestimonyCarousel';
+import "./Home.css";
 
 import KitchenHome from "../images/KitchenHome.png";
 import Kitchen from "../images/Kitchen.jpg";
@@ -12,6 +17,11 @@ import MediaRoom from "../images/MediaRoom.jpg";
 import LivingRoom from "../images/LivingRoom.jpg";
 import GetStarted from "../images/GetStarted.jpg";
 import Contractor from "../images/Contractor.png";
+
+import Kitchen400 from "../images/Kitchen400x400.jpg";
+import Bathroom400 from "../images/Bathroom400x400.jpg";
+import Media400 from "../images/Media400x400.jpg";
+import Living400 from "../images/Living400x400.jpg";
 
 
 class Home extends Component {
@@ -24,110 +34,135 @@ class Home extends Component {
                 <header id="home">
                     <div className="row banner">
                         <div className="banner-text">
-                            <span className="banner1">Refresh </span>
-                            <span className="banner2">YOUR HOME.</span>
+                            <div><span className="banner1">Refresh <span className="banner2">YOUR HOME.</span></span></div>
+                            <div><span className="banner3">Find everything you need to get started on building your dream home.</span></div>
+                            <div className="button-header"><Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", marginTop: "10px", borderRadius: "0px", backgroundColor: "#7a9392" }} size="lg">SIGN-UP</Button></Link></div>
                         </div>
                     </div>
                 </header>
                 {/* End Header */}
 
-                {/* Home Remodeling section  */}
+                 {/* Home Remodeling section  */}
                 <Container fluid style={{ backgroundColor: '#ede9e3' }}>
                     <div>
-                        <Divider />
-                            <Row className="home-title">
-                                <span className="header1">HOME REMODELING </span>
-                            </Row>
-                            <Row className="home-title2">
-                                <span className="header2">MADE SIMPLE</span>
-                            </Row>
-                        <Divider />
+
+                        <Row className="home-title">
+                            <span className="header1">HOME REMODELING </span>
+                        </Row>
+                        <Row className="home-title2">
+                            <span className="header2">MADE SIMPLE<Divider /></span>
+                        </Row>
                     </div>
                 </Container>
                 {/* Home Remodeling Images section  */}
-                <Container fluid style={{ backgroundColor: '#ede9e3' }}>
-                    <Row>
-                        <Col className="home">
-                            <div className="home-details">KITCHEN</div>
-                        </Col>
-                        <Col className="home">
-                            <div className="home-details">KITCHEN</div>
-                        </Col>
-                        <Col className="home">
-                            <div className="home-details">KITCHEN</div>
-                        </Col>
-                        <Col className="home">
-                            <div className="home-details">KITCHEN</div>
-                        </Col>
-                    </Row>
+                <Container className="cards">
+                    <CardDeck d-flex >
+                        <Card d-flex align-items-stretch w-100>
+                            <Card.Img variant="top" src={Kitchen400} />
+                            <Card.ImgOverlay >
+                                <Card.Title><span className="card-title-text "> KITCHEN</span></Card.Title>
+                            </Card.ImgOverlay>
+                        </Card>
+                        <Card d-flex align-items-stretch w-100>
+                            <Card.Img variant="top" src={Bathroom400} />
+                            <Card.ImgOverlay >
+                                <Card.Title><span className="card-title-text ">BATHROOM </span></Card.Title>
+                            </Card.ImgOverlay>
+                        </Card>
+                        <Card d-flex align-items-stretch w-100>
+                            <Card.Img variant="top" src={Media400} />
+                            <Card.ImgOverlay >
+                                <Card.Title><span className="card-title-text ">MEDIA ROOM</span></Card.Title>
+                            </Card.ImgOverlay>
+                        </Card>
+                        <Card d-flex align-items-stretch w-100>
+                            <Card.Img variant="top" src={Living400} />
+                            <Card.ImgOverlay >
+                                <Card.Title><span className="card-title-text ">LIVING ROOM</span></Card.Title>
+                            </Card.ImgOverlay>
+                        </Card>
+                    </CardDeck>
                 </Container>
+                {/* End of Home Remodeling Images section  */}
 
 
                 {/* About section  */}
                 <section id="about">
                     <div className="row align-items-center" style={{ backgroundColor: ' #ede9e3' }}>
-                        <div className="col-lg-6 col-lg-push-6" >
-                            <div className="about-image">
-                                <img src={KitchenHome} className="img-fluid" alt="Modern kitchen" />
-                            </div>
-                        </div>
-                        <div className="col-lg-6" style={{ backgroundColor: '#7a9392' }}>
+                        <div className="col-lg-7 order-1" style={{ backgroundColor: '#7a9392' }}>
                             <div className="about-text-area">
 
                                 <span className="header1" style={{ color: 'white' }}>OUR</span>
                                 <span className="header2" style={{ color: 'white' }}> PURPOSE</span>
                                 <p className="about_text">Looking to refresh your home? Need ideas on home improvement and don't know where to start? Modern Living is your go-to site for all of your home improvement needs. </p>
-                                <Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button>{' '}
+                                <Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
+                        <div className="col-lg-5 " >
+                            <div className="about-image overlap-image">
+                                <img src={KitchenHome} width="700" className="img-fluid" alt="Modern kitchen  " />
+                            </div> 
+                        </div>
+
                     </div>
                 </section>
                 {/* End of about section */}
 
                 {/* Inspriation section */}
-                <Container fluid style={{ backgroundColor: '#ede9e3' }}>
+                <Container fluid id="inspiration" style={{ backgroundColor: '#ede9e3', padding: '0px' }}>
                     <div>
-                    <Divider />
                         <Row className="home-title">
                             <span className="header1" style={{ color: '#ae6e1c' }}>SOME </span>
                         </Row>
-                        
+
                         <Row className="home-title2">
-                            <span className="header2" style={{ color: '#ae6e1c' }}>INSPIRATION</span>
+                            <span className="header2" style={{ color: '#ae6e1c' }}>INSPIRATION<Divider /></span>
                         </Row>
+
                     </div>
 
                     {/* Inspiration Images */}
-                    <div className="row align-items-center" style={{ backgroundColor: ' #ae6e1c' }}>
-                        <div className="col-sm-3 px-0" >
+                    <div className="row align-items-center px-0" style={{ backgroundColor: ' #ae6e1c' }}>
+                        <div className="col-sm-3 px-0 d-flex" >
                             <div className="inspo-image">
-                            <img src={Kitchen} className="img-fluid" alt="Modern kitchen." />
+                                <img src={Kitchen} className="img-fluid" alt="Modern kitchen." />
                             </div>
                         </div>
-                        <div className="col-sm-3 px-0" >
+
+                        <div className="col-sm-3 d-flex" >
                             <h2 className="inspo-text1">KITCHEN</h2>
                         </div>
-                        <div className="col-sm-3 px-0" >
-                            <img src={Bathroom} className="img-fluid" alt="Modern kitchen" />
+
+                        <div className="col-sm-3 px-0 d-flex" >
+                            <div className="inspo-image">
+                                <img src={Bathroom} className="img-fluid" alt="Modern kitchen  " />
+                            </div>
                         </div>
-                        <div className="col-sm-3 px-0">
+
+                        <div className="col-sm-3 px-0 d-flex">
                             <h2 className="inspo-text1">BATHROOM</h2>
                         </div>
                     </div>
+
                     <div className="row align-items-center inspo-row2" >
-                        <div className="col-sm-3 px-0" >
+                        <div className="col-sm-3 px-0 d-flex order-2 order-lg-1" >
                             <h2 className="inspo-text2">MEDIA ROOM</h2>
                         </div>
-                        <div className="col-sm-3 px-0" >
-                            <div className="about-image">
-                                <img src={MediaRoom} className="img-fluid" alt="Modern kitchen" />
+
+                        <div className="col-sm-3 px-0 d-flex order-1 order-lg-2" >
+                            <div className="inspo-image">
+                                <img src={MediaRoom} className="img-fluid" alt="Modern kitchen  " />
                             </div>
                         </div>
-                        <div className="col-sm-3 px-0" >
-                        <h2 className="inspo-text2">LIVING ROOM</h2>
+
+                        <div className="col-sm-3 px-0 d-flex order-4 order-lg-3" >
+                            <h2 className="inspo-text2">LIVING ROOM</h2>
                         </div>
-                        <div className="col-sm-3 px-0" >
-                            <img src={LivingRoom} className="img-fluid" alt="Modern kitchen" />
+
+                        <div className="col-sm-3 px-0 d-flex order-3 order-lg-4" >
+                            <div className="inspo-image">
+                                <img src={LivingRoom} className="img-fluid" alt="Modern kitchen  " />
+                            </div>
                         </div>
                     </div>
                 </Container>
@@ -135,20 +170,20 @@ class Home extends Component {
                 
 
                 {/* Get started section  */}
-                <section id="about">
+                <section id="started">
                     <div className="row align-items-center" >
-                        <div className="col-lg-6" style={{ backgroundColor: '#626366' }}>
-                            <div className="help-text-area">
+                        <div className="col-lg-7  " style={{ backgroundColor: '#626366' }}>
+                            <div className="help-text-area ">
                                 <span className="header1" style={{ color: 'white' }}>GET</span>
                                 <span className="header2" style={{ color: 'white' }}> STARTED</span>
                                 <p className="help-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a say because you forgot that one thing?</p>
                                 <p className="help-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
-                                <Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button>{' '}
+                                <Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-lg-push-6" >
-                            <div className="about-image">
-                                <img src={GetStarted} className="img-fluid" alt="Modern kitchen" />
+                        <div className="col-lg-5 " >
+                            <div className="started-image overlap-image">
+                                <img src={GetStarted} className="img-fluid" alt="Modern kitchen  " />
                             </div>
                         </div>
                     </div>
@@ -157,16 +192,16 @@ class Home extends Component {
 
 
                 {/* Help section  */}
-                <section className="help px-0">
-                    <div className="row align-items-center help-bg px-0" >
-                        <div className="col-lg-6 px-0" >
-                            <img src={Contractor}  alt="Modern kitchen" />
+                <section id="help px-0 d-flex">
+                    <div className="row help-bg px-0" >
+                        <div className="col-lg-6 px-0 help-contractor order-2 order-lg-1" >
+                            <img src={Contractor} alt="Modern kitchen " />
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 order-1 order-lg-2" >
                             <div className="about-text-area">
                                 <span className="header1" >NEED HELP?</span>
                                 <p className="help-text" style={{ color: ' #626366' }}>Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                                <Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button>{' '}
+                                <Link to="/Register"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
                     </div>
@@ -175,7 +210,7 @@ class Home extends Component {
 
 
                 {/* Testimonials section  */}
-                <section className="testimonials test-bg">
+                <section id="testimonials" className="testimonials test-bg">
                     <div>
                         <Row className="testimonials-title">
                             <span className="header1" style={{ color: 'white' }}>TESTIMONIALS <Divider /></span>
@@ -185,9 +220,40 @@ class Home extends Component {
                         <div className="col-lg-7">
                             <Testimony />
                         </div>
+                        <div className="col-lg-5 px-0" >
+                        </div>
                     </div>
                 </section>
                 {/* End of testimonials section */}
+
+
+                {/* newsletters section  */}
+                <section className="newsletter bg-footer">
+                    <div>
+                        <Row className="testimonials-title">
+                            <span className="header1" style={{ color: 'white' }}>STAY UP-TO-DATE <Divider /></span>
+                        </Row>
+                    </div>
+                    <div className="footer-subscribe py-5 align-items-center">
+                        <Row>
+                            <Col lg={7}>
+                                <div >
+                                    <h5 className="newsletter-text mt-2 pt-1">Stay up-to-date with the latetest trends and news from MODERN LIVING. </h5>
+                                </div>
+                            </Col>
+                            <Col lg={5}>
+                                <div className="footer-subcribe">
+                                    <Form action="#">
+                                        <input placeholder="Your Email Address" type="text" />
+                                        <Button color="red" type="submit"><i class="fas fa-envelope"></i></Button>
+                                    </Form>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                </section>
+                {/* End of newsletters section */}
+
             </div>
         );
     }
