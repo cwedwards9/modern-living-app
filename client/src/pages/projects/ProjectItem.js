@@ -3,15 +3,11 @@ import React, { Component } from "react";
 class ProjectItem extends Component {
     constructor(props) {
         super(props);
-        this.state = { isEditing: false, notes: "" };
+        this.state = { isEditing: false, notes: this.props.notes };
         this.handleDelete = this.handleDelete.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
-    }
-    // On page load (after render() ), set the notes state in this component to be equal to the notes props from Projects 
-    componentDidMount() {
-        this.setState({ notes: this.props.notes });
     }
     // On click of the delete button, call the delete method and pass in the project's id
     handleDelete() {
