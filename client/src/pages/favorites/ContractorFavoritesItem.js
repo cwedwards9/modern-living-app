@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class FavoritesItem extends Component {
+class ContractorFavoritesItem extends Component {
     constructor(props) {
         super(props);
         this.handleDelete = this.handleDelete.bind(this);
@@ -14,7 +14,7 @@ class FavoritesItem extends Component {
     render() {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
-            <div className="FavoritesItem">
+            <div className="ContractorFavoritesItem">
                 <div className="favorites-heading">
                     <h2>{name}</h2>
                     <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
@@ -29,4 +29,4 @@ class FavoritesItem extends Component {
 }
 
 
-export default FavoritesItem;
+export default ContractorFavoritesItem;
