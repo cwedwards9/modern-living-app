@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ContractorItem from "./ContractorItem";
 import axios from "axios";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import './Contractor.css';
 
 class ContractorSearch extends Component {
     constructor(props) {
@@ -31,41 +35,40 @@ class ContractorSearch extends Component {
     }
     render() {
         return (
-            <main className="ContractorSearch">
-                <h1>Find a Professional</h1>
-                <p>We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="term">Search Term</label>
-                    <select id="term" name="term" onChange={this.handleChange}>
-                        <option value="default">--Please choose an option--</option>
-                        <option value="Plumber">Plumber</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="Carpenter">Carpenter</option>
-                        <option value="Drywaller">Drywaller</option>
-                        <option value="Plastering">Plastering</option>
-                        <option value="Painter">Painter</option>
-                        <option value="Heating and Air-Conditioning">Heating and Air-Conditioning</option>
-                        <option value="Roofer">Roofer</option>
-                        <option value="Landscaper">Landscaper</option>
-                        <option value="Concrete">Concrete</option>
-                        <option value="Flooring">Flooring</option>
-                        <option value="Glass">Glass</option>
-                        <option value="General Contractor">General Contractor</option>
-                        <option value="Designer">Designer</option>
-                    </select>
-
-                    <label htmlFor="location">Location (city and state)</label>
-                    <input 
-                        id="location"
-                        value={this.state.location}
-                        name="location"
-                        onChange={this.handleChange}
-                    />
-                    <button>Get Businesses</button>
-                </form>
-                
-                <section className="ContractorList">
-                    {this.state.businesses.map(b => (
+           <div className="ContractorSearchPage">
+                <Row className='topbox col-lg-6 flex'>
+                    <p className="tittle"><span className='findatext'>Find a</span> <br></br> <span className='pro'>Professional</span></p>
+                    <p className="tbp">We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
+                    
+                    <Form className="form1" onSubmit={this.handleSubmit}>
+                        <Form.Group>
+                            <Form.Control as="select" id="term" name="term" onChange={this.handleChange}>
+                                <option value="default">Search by Category</option>
+                                <option value="Plumber">Plumber</option>
+                                <option value="Electrician">Electrician</option>
+                                <option value="Carpenter">Carpenter</option>
+                                <option value="Drywaller">Drywaller</option>
+                                <option value="Plastering">Plastering</option>
+                                <option value="Painter">Painter</option>
+                                <option value="Heating and Air-Conditioning">Heating and Air-Conditioning</option>
+                                <option value="Roofer">Roofer</option>
+                                <option value="Landscaper">Landscaper</option>
+                                <option value="Concrete">Concrete</option>
+                                <option value="Flooring">Flooring</option>
+                                <option value="Glass">Glass</option>
+                                <option value="General Contractor">General Contractor</option>
+                                <option value="Designer">Designer</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Control id="location" value={this.state.location} name="location" onChange={this.handleChange} placeholder="Location (City/zip)" />
+                        </Form.Group>
+                        <Button className="butt" variant="outline-light" type="submit">Submit</Button>
+                    </Form>
+                </Row>
+        
+                <div className="ContractorsList">
+                {this.state.businesses.map(b => (
                         <ContractorItem 
                             key={b.id}
                             name={b.name}
@@ -76,8 +79,10 @@ class ContractorSearch extends Component {
                             url={b.url}
                         />
                     ))}
-                </section>
-            </main>
+                </div>
+           </div>
+                
+          
         );
     }
 }
