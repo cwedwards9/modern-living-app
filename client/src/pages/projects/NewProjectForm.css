@@ -1,9 +1,14 @@
-/* NewProjectForm */
+.NewProject {
+    background-color: #EDE9E3;
+    padding: 3rem 0;
+}
 
+/* NewProjectForm */
 .NewProjectForm {
+    background-color: white;
     padding: 1rem;
     width: 40vw;
-    margin: 3rem auto;
+    margin: 0 auto;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
