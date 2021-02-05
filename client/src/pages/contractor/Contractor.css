@@ -1,0 +1,90 @@
+.ContractorSearchPage {
+    background-color: #ede9e3;
+}
+
+.ContractorsList {
+    padding: 3rem 0;
+}
+
+.ContractorItem{
+    margin: 2rem auto;
+    background-color: white;
+    /* width: 35em; */
+    box-shadow: 0.5em  0.5em 0em #7a9392 ;
+}
+
+.search{
+    Margin:auto;
+    padding: 3em;
+}
+
+.topbox{
+    background-color: #626366;
+    height: 29em;
+    box-shadow: 5px 10px #888888; 
+}
+
+.tittle{
+    text-align: center;
+    color:white;
+    margin: auto;
+}
+
+.pro{
+    font-size: 5em;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.findatext{
+    font-size: 2em;
+}
+
+
+.tbp{
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.form1{
+    margin: 0 auto 2rem;
+}
+
+.butt{
+    background-color: #7a9392 !important;
+    outline-color: #7a9392 !important;
+}
+
+.cp{
+    /* padding: 0%;
+    margin: 0%;   */
+    display: block;
+}
+
+.text{
+    margin-top: 1rem;
+}
+
+.yelp{
+    color: #ae6e1c ;
+    text-shadow: 1px 1px 1px #ccc;
+    position: absolute;
+    right: 10px;
+    top: .3em;
+    font-size: 2.5em;
+}
+
+.heart{
+    color: #626366;
+    position: relative;
+    top: .5em;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 2em;
+}
+
+.ContractorItem button {
+    background-color: transparent;
+    border: none;
+}
