@@ -25,57 +25,60 @@ class NewProjectForm extends Component {
 
     render() {
         return (
-            <div className="NewProjectForm">
-                <form onSubmit={this.handleSubmit}>
-                    <h1>New Project</h1>
-                    <label htmlFor="title">Title</label>
-                    <input 
-                        id="title"
-                        type="text"
-                        name="title"
-                        value={this.state.title}
-                        onChange={this.handleChange}
-                    />
+            <div className="NewProject">
+                <div className="NewProjectForm">
+                    <form onSubmit={this.handleSubmit}>
+                        <h1>New Project</h1>
+                        <label htmlFor="title">Title</label>
+                        <input 
+                            id="title"
+                            type="text"
+                            name="title"
+                            value={this.state.title}
+                            onChange={this.handleChange}
+                        />
 
-                    <label htmlFor="category">Category</label>
-                    <select id="category" name="category" onChange={this.handleChange}>
-                        <option value="default">--Please choose the project type--</option>
-                        <option value="Kitchen">Kitchen</option>
-                        <option value="Bathroom">Bathroom</option>
-                        <option value="Living Room">Living Room</option>
-                        <option value="Basement">Basement</option>
-                    </select>
+                        <label htmlFor="category">Category</label>
+                        <select id="category" name="category" onChange={this.handleChange}>
+                            <option value="default">--Please choose the project type--</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Bathroom">Bathroom</option>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Basement">Basement</option>
+                        </select>
 
-                    <label htmlFor="notes">Notes</label>
-                    <textarea 
-                        id="notes"
-                        name="notes"
-                        value={this.state.notes}
-                        onChange={this.handleChange}
-                        rows={5}
-                    ></textarea>
+                        <label htmlFor="notes">Notes</label>
+                        <textarea 
+                            id="notes"
+                            name="notes"
+                            value={this.state.notes}
+                            onChange={this.handleChange}
+                            rows={5}
+                        ></textarea>
 
-                    <label htmlFor="cost">Cost</label>
-                    <input
-                        id="cost"
-                        type="number"
-                        name="estimated_cost"
-                        value={this.state.estimated_cost}
-                        onChange={this.handleChange}
-                    />
+                        <label htmlFor="cost">Cost</label>
+                        <input
+                            id="cost"
+                            type="number"
+                            name="estimated_cost"
+                            value={this.state.estimated_cost}
+                            onChange={this.handleChange}
+                        />
 
-                    <label htmlFor="">Budget</label>
-                    <input 
-                        id="budget"
-                        type="number"
-                        name="budget"
-                        value={this.state.budget}
-                        onChange={this.handleChange}
-                    />
+                        <label htmlFor="">Budget</label>
+                        <input 
+                            id="budget"
+                            type="number"
+                            name="budget"
+                            value={this.state.budget}
+                            onChange={this.handleChange}
+                        />
 
-                    <button>Create</button>
-                </form>
+                        <button>Create</button>
+                    </form>
+                </div>
             </div>
+            
         );
     }
 }
