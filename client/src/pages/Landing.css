@@ -1,24 +1,110 @@
-.card{
-    width: 15em;
-    height: 10em;
-    margin: 3em;
-    color: #7a9392;
+.landC{
+    width: 17em;
+    height:16em ;
     position: relative;
-    top: 10em;
-    outline: 5px solid white;
-    outline-offset: -10px;
+    left: 6em;
+    color:  white ;
+    outline: .1em solid white;   
+    outline-offset: -1em;
+    background-color: #7a9392;
+    animation: transitionIn 0.75s;
+    transition: all ease-in 0.3s;
+    box-shadow: .2em .2em 0em #ae6e1c;
+    margin: 2em;
+    float: right;
+}
+  
+.landC:hover{
+    color:#ae6e1c;
+    cursor: pointer;
+    transform:scale(1.1);
+}
+  
+@keyframes transitionIn {
+    from {opacity: 0; transform: translateY(18px);}
+    to {opacity: 1; transform: translateY(0); }
+}
+  
+  
+.header{
+    height: 6em;
+    width: 48em;
+    background-color: #626366;
 }
 
-.header{
-    width: 15em;
-    height: 1.5em;
-    border: solid;
-    border-color: #626366;
+.h1t{
     color: white;
-    background-color: #626366;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Playfair Display', serif;
     position: relative;
-    right: 6em;
-    top: 1.5em;
+    top: .1em;
+    font-size: 4em;
 }
+
+
+
+.inspoText{
+    position: relative;
+    left: 1.3em;
+    top: 3em;    
+}
+.guideText{
+    position: relative;
+    left: .8em;
+    top: 3em;     
+}
+.findText{
+    position: relative;
+    left: 1.5em;
+    top: 3em;    
+}
+.projectText{
+    position: relative;
+    left: 1.9em;
+    top: 3em;    
+}
+.favText{
+    position: relative;
+    left: 1.6em;
+    top: 3em;    
+}
+.newText{
+    position: relative;
+    left: 1em;
+    top: 3em;    
+}
+
+.light{
+    font-size: 5em;
+    position: relative;
+    left: 1.4em;
+    top: .8em;
+} 
+.clip{
+    font-size: 5em;
+    position: relative;
+    left: 1.3em;
+    top: .8em;
+} 
+.help{
+    font-size: 5em;
+    position: relative;
+    left: 1.1em;
+    top: .8em;
+} 
+.check{
+    font-size: 5em;
+    position: relative;
+    left: 1.2em;
+    top: .8em;
+} 
+.fav{
+    font-size: 5em;
+    position: relative;
+    left: 1.2em;
+    top: .8em;
+} 
+.plus{
+    font-size: 5em;
+    position: relative;
+    left: 1.2em;
+    top: .8em;
+} 

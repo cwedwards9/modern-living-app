@@ -166,7 +166,7 @@ header .banner-text hr {
 .home-title2 {
     justify-content: center;
     padding-bottom: 20px;
-    padding-bottom: 18px;
+    padding-bottom: 40px;
 }
 .header1 {
     font-family: 'Times New Roman', Times, serif;
@@ -185,32 +185,37 @@ header .banner-text hr {
 .home {
     margin: 20px;
 }
-.card-img-overlay {
+.card-main-overlay {
     background-color: white;
-    opacity: 80%;
+    opacity: 90%;
     margin: 20px;
     justify-content: center;
     border-radius: 0px;
-    align-items: middle;
+  }
+.card-img-overlay {
+    background-color: white;
+    opacity: 90%;
+    margin: 20px;
+    justify-content: center;
+    border-radius: 0px;
 }
 .card-img-overlay:hover {
     opacity: 0%;
 }
-.card-title{
+.card-main-title{
     font-family: 'Times New Roman', Times, serif;
     margin-top:40%;
-    justify-content: center;
-}
-.card {
+    text-align: center;
+  }
+  .card-main {
     margin-top: 30px;
     margin-bottom: 30px;
     overflow-y: auto;
     /*overflow-x: hidden;*/
-    align-items: middle;
-}
-.card-img-top {
+  }
+  .card-img-top {
     border-radius: 0px;
-}
+  }
 /* --------------About section------------- */
 .about-text-area {
     text-align: right;
@@ -231,7 +236,7 @@ header .banner-text hr {
 }
 #about {
     margin-top: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 /* ----------------inspiration section-----------------------*/
 .inspo-text1 {
@@ -409,7 +414,7 @@ button {
 .footer-subscribe {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* input {
+.newsletter-input {
     padding: 12px 20px;
     width: 100%;
     font-size: 14px;
@@ -420,7 +425,7 @@ button {
     border-radius: 5px;
     font-weight: 500;
 } 
-form {
+/* form {
     position: relative;
     max-width: 400px;
 } */
