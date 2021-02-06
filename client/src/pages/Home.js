@@ -36,7 +36,7 @@ class Home extends Component {
                         <div className="banner-text">
                             <div><span className="banner1">Refresh <span className="banner2">YOUR HOME.</span></span></div>
                             <div><span className="banner3">Find everything you need to get started on building your dream home.</span></div>
-                            <div className="button-header"><Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", marginTop: "10px", borderRadius: "0px", backgroundColor: "#7a9392" }} size="lg">SIGN-UP</Button></Link></div>
+                            <div className="button-header"><Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", marginTop: "10px", borderRadius: "0px", backgroundColor: "#7a9392" }} size="lg">SIGN-UP</Button></Link></div>
                         </div>
                     </div>
                 </header>
@@ -56,29 +56,29 @@ class Home extends Component {
                 </Container>
                 {/* Home Remodeling Images section  */}
                 <Container className="cards">
-                    <CardDeck d-flex >
-                        <Card d-flex align-items-stretch w-100>
+                    <CardDeck className="d-flex" >
+                        <Card className="card-main d-flex align-items-stretch w-100">
                             <Card.Img variant="top" src={Kitchen400} />
-                            <Card.ImgOverlay >
-                                <Card.Title><span className="card-title-text "> KITCHEN</span></Card.Title>
+                            <Card.ImgOverlay  className="card-main-overlay">
+                                <Card.Title  className="card-main-title text-center"><span className="card-title-text "> KITCHEN</span></Card.Title>
                             </Card.ImgOverlay>
                         </Card>
-                        <Card d-flex align-items-stretch w-100>
+                        <Card className="card-main d-flex align-items-stretch w-100">
                             <Card.Img variant="top" src={Bathroom400} />
-                            <Card.ImgOverlay >
-                                <Card.Title><span className="card-title-text ">BATHROOM </span></Card.Title>
+                            <Card.ImgOverlay className="card-main-overlay">
+                                <Card.Title className="card-main-title d-flex text-center"><span className="card-title-text ">BATHROOM </span></Card.Title>
                             </Card.ImgOverlay>
                         </Card>
-                        <Card d-flex align-items-stretch w-100>
+                        <Card className="card-main d-flex align-items-stretch w-100">
                             <Card.Img variant="top" src={Media400} />
-                            <Card.ImgOverlay >
-                                <Card.Title><span className="card-title-text ">MEDIA ROOM</span></Card.Title>
+                            <Card.ImgOverlay className="card-main-overlay">
+                                <Card.Title className="card-main-title"><span className="card-title-text ">MEDIA ROOM</span></Card.Title>
                             </Card.ImgOverlay>
                         </Card>
-                        <Card d-flex align-items-stretch w-100>
+                        <Card className="card-main d-flex align-items-stretch w-100">
                             <Card.Img variant="top" src={Living400} />
-                            <Card.ImgOverlay >
-                                <Card.Title><span className="card-title-text ">LIVING ROOM</span></Card.Title>
+                            <Card.ImgOverlay className="card-main-overlay">
+                                <Card.Title className="card-main-title"><span className="card-title-text ">LIVING ROOM</span></Card.Title>
                             </Card.ImgOverlay>
                         </Card>
                     </CardDeck>
@@ -95,7 +95,7 @@ class Home extends Component {
                                 <span className="header1" style={{ color: 'white' }}>OUR</span>
                                 <span className="header2" style={{ color: 'white' }}> PURPOSE</span>
                                 <p className="about_text">Looking to refresh your home? Need ideas on home improvement and don't know where to start? Modern Living is your go-to site for all of your home improvement needs. </p>
-                                <Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
+                                <Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
                         <div className="col-lg-5 " >
@@ -178,7 +178,7 @@ class Home extends Component {
                                 <span className="header2" style={{ color: 'white' }}> STARTED</span>
                                 <p className="help-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a say because you forgot that one thing?</p>
                                 <p className="help-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
-                                <Link to="/Register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
+                                <Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
                         <div className="col-lg-5 " >
@@ -192,7 +192,7 @@ class Home extends Component {
 
 
                 {/* Help section  */}
-                <section id="help px-0 d-flex">
+                <section id="help" className="px-0 d-flex">
                     <div className="row help-bg px-0" >
                         <div className="col-lg-6 px-0 help-contractor order-2 order-lg-1" >
                             <img src={Contractor} alt="Modern kitchen " />
@@ -201,7 +201,7 @@ class Home extends Component {
                             <div className="about-text-area">
                                 <span className="header1" >NEED HELP?</span>
                                 <p className="help-text" style={{ color: ' #626366' }}>Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                                <Link to="/Register"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
+                                <Link to="/register"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
                     </div>
@@ -244,8 +244,8 @@ class Home extends Component {
                             <Col lg={5}>
                                 <div className="footer-subcribe">
                                     <Form action="#">
-                                        <input placeholder="Your Email Address" type="text" />
-                                        <Button color="red" type="submit"><i class="fas fa-envelope"></i></Button>
+                                    <input className="newsletter-input" placeholder="Your Email Address" type="text" />
+                                        <Button color="red" type="submit"><i className="fas fa-envelope"></i></Button>
                                     </Form>
                                 </div>
                             </Col>
