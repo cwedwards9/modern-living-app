@@ -20,7 +20,7 @@ class Login extends Component {
 
         axios.post("/login", { email: email, password: password })
             .then((response) => {
-                console.log(response);
+                localStorage.setItem('user', JSON.stringify(response.data));
                 this.props.routeProps.history.push('/landing');
             })
             .catch(error => {
