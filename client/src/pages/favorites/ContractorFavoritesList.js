@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ContractorFavoritesItem from "./ContractorFavoritesItem";
+import NavBar from '../../components/NavigationBar';
 import "./Favorites.css";
 import axios from "axios";
 
@@ -29,25 +30,29 @@ class ContractorFavoritesList extends Component {
 
     render() {
         return (
-            <div className="ContractorFavoritesList">
-                <h1>Favorites page</h1>
-                <div className="favorites-links">
-                    <Link to="/favorites/designs" className="fav-link">Favorited Designs</Link>
+            <div className="ContractorFavoritesPage">
+                <NavBar />
+                <div className="ContractorFavoritesList">
+                    <h1>Favorites page</h1>
+                    <div className="favorites-links">
+                        <Link to="/favorites/designs" className="fav-link">Favorited Designs</Link>
+                    </div>
+                    {this.state.contractors.map(c => (
+                        <ContractorFavoritesItem 
+                            key={c._id}
+                            id={c._id}
+                            name={c.name}
+                            phone={c.phone}
+                            locationOne={c.locationOne} 
+                            locationTwo={c.locationTwo}
+                            rating={c.rating}
+                            url={c.url}
+                            delete={this.deleteContractor}
+                        />
+                    ))}
                 </div>
-                {this.state.contractors.map(c => (
-                    <ContractorFavoritesItem 
-                        key={c._id}
-                        id={c._id}
-                        name={c.name}
-                        phone={c.phone}
-                        locationOne={c.locationOne} 
-                        locationTwo={c.locationTwo}
-                        rating={c.rating}
-                        url={c.url}
-                        delete={this.deleteContractor}
-                    />
-                ))}
             </div>
+            
             
         );
     }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProjectItem from "./ProjectItem";
+import NavBar from '../../components/NavigationBar';
 import axios from "axios";
 import "./Project.css";
 
@@ -39,7 +40,9 @@ class Projects extends Component {
     }
     render() {
         return (
-            <div className="ProjectsList">
+            <div className="ProjectsPage">
+                <NavBar />
+                <div className="ProjectsList">
                 {this.state.projects.map(p => (
                     <ProjectItem 
                         key={p._id}
@@ -54,6 +57,8 @@ class Projects extends Component {
                     />
                 ))}
             </div>
+            </div>
+            
         );
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import NavBar from '../../components/NavigationBar';
 import "./Favorites.css";
 import axios from "axios";
 
@@ -9,7 +10,7 @@ class DesignFavoritesList extends Component {
         this.state = { designs: [] };
         this.deleteDesign = this.deleteDesign.bind(this);
     }
-    // Send a GET request to '/contractors' to get the contractors in the db, save to state
+    // Send a GET request to '/designs' to get the designs in the db, save to state
     componentDidMount() {
         axios.get("/designs")
             .then(res => {
@@ -29,20 +30,22 @@ class DesignFavoritesList extends Component {
     render() {
         return (
             <div className="DesignFavoritesPage">
-                <h1>Design Favorites page</h1>
-                <div className="favorites-links">
-                    <Link to="/favorites/contractors" className="fav-link">Favorited Contractors</Link>
-                </div>
-                <div className="DesignFavorites">
-                    {this.state.designs.map(d => (
-                        <div className="DesignFavoriteItem" key={d._id}>
-                            <img src={d.url} alt={d.description} />
-                            <button onClick={() => this.deleteDesign(d._id)}>Remove</button>
-                        </div>
-                    ))}
+                <NavBar />
+                <div className="DesignFavoritesList">
+                    <h1>Design Favorites page</h1>
+                    <div className="favorites-links">
+                        <Link to="/favorites/contractors" className="fav-link">Favorited Contractors</Link>
+                    </div>
+                    <div className="DesignFavorites">
+                        {this.state.designs.map(d => (
+                            <div className="DesignFavoriteItem" key={d._id}>
+                                <img src={d.url} alt={d.description} />
+                                <button onClick={() => this.deleteDesign(d._id)}>Remove</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            
         );
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContractorItem from "./ContractorItem";
+import NavBar from '../../components/NavigationBar';
 import axios from "axios";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -36,6 +37,7 @@ class ContractorSearch extends Component {
     render() {
         return (
            <div className="ContractorSearchPage">
+               <NavBar />
                 <Row className='topbox col-lg-6 flex'>
                     <p className="tittle"><span className='findatext'>Find a</span> <br></br> <span className='pro'>Professional</span></p>
                     <p className="tbp">We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
