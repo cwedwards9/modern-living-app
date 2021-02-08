@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Navbar } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 import axios from "axios";
 import "./NavigationBar.css";
 import ModernLivingLogoVertical from "../images/ModernLivingLogoVertical.png"
@@ -10,17 +9,22 @@ class NavigationBar extends Component {
     constructor() {
         super();
         this.state = { isAuth: false };
+        this.handleLogout = this.handleLogout.bind(this);
     }
     componentDidMount() {
-        axios.get("/api/isAuthenticated")
-            .then(results => {
-                if(results.data === "Not logged in") {
-                    this.setState({ isAuth: false });
-                }
-                else {
-                    this.setState({ isAuth: true });
-                }
-            })
+        const user = localStorage.getItem("user");
+        if(user) {
+            this.setState({ isAuth: true });
+        }
+        else {
+            this.setState({ isAuth: false });
+        }
+    }
+    async handleLogout() {
+        await axios.get("/logout"); 
+        this.setState({ isAuth: false });
+        localStorage.clear();
+        window.location.replace("/");
     }
     render() {
         return (
@@ -31,7 +35,7 @@ class NavigationBar extends Component {
                     {this.state.isAuth
                         ? 
                         <div className='col-s-4 ml-auto'>
-                            <Link to="/logout"><Button variant="outline-light" style={{marginRight: "20px", borderRadius: "0px"}} size="sm">LOG OUT</Button></Link>
+                            <Button onClick={this.handleLogout} variant="outline-light" style={{marginRight: "20px", borderRadius: "0px"}} size="sm">LOG OUT</Button>
                         </div>
                         : 
                         <div className='col-s-4 ml-auto'>
