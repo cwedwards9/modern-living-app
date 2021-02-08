@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import { NavigationBar } from '../components/NavigationBar';
+import NavigationBar from '../components/NavigationBar';
 
 import { Container, Row, Col, Form } from "reactstrap";
 import Divider from '@material-ui/core/Divider';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
+import { Button, Card, CardDeck } from 'react-bootstrap';
 import Testimony from './TestimonyCarousel';
 import "./Home.css";
 
@@ -22,6 +20,11 @@ import Kitchen400 from "../images/Kitchen400x400.jpg";
 import Bathroom400 from "../images/Bathroom400x400.jpg";
 import Media400 from "../images/Media400x400.jpg";
 import Living400 from "../images/Living400x400.jpg";
+
+const cardRooms = [ 
+    {room: "KITCHEN", image: Kitchen400}, {room: "BATHROOM", image: Bathroom400}, 
+    {room: "MEDIA ROOM", image: Media400}, {room: "LIVING ROOM", image: Living400} 
+];
 
 
 class Home extends Component {
@@ -57,30 +60,14 @@ class Home extends Component {
                 {/* Home Remodeling Images section  */}
                 <Container className="cards">
                     <CardDeck className="d-flex" >
-                        <Card className="card-main d-flex align-items-stretch w-100">
-                            <Card.Img variant="top" src={Kitchen400} />
-                            <Card.ImgOverlay  className="card-main-overlay">
-                                <Card.Title  className="card-main-title text-center"><span className="card-title-text "> KITCHEN</span></Card.Title>
-                            </Card.ImgOverlay>
-                        </Card>
-                        <Card className="card-main d-flex align-items-stretch w-100">
-                            <Card.Img variant="top" src={Bathroom400} />
-                            <Card.ImgOverlay className="card-main-overlay">
-                                <Card.Title className="card-main-title d-flex text-center"><span className="card-title-text ">BATHROOM </span></Card.Title>
-                            </Card.ImgOverlay>
-                        </Card>
-                        <Card className="card-main d-flex align-items-stretch w-100">
-                            <Card.Img variant="top" src={Media400} />
-                            <Card.ImgOverlay className="card-main-overlay">
-                                <Card.Title className="card-main-title"><span className="card-title-text ">MEDIA ROOM</span></Card.Title>
-                            </Card.ImgOverlay>
-                        </Card>
-                        <Card className="card-main d-flex align-items-stretch w-100">
-                            <Card.Img variant="top" src={Living400} />
-                            <Card.ImgOverlay className="card-main-overlay">
-                                <Card.Title className="card-main-title"><span className="card-title-text ">LIVING ROOM</span></Card.Title>
-                            </Card.ImgOverlay>
-                        </Card>
+                        {cardRooms.map(c => (
+                            <Card className="card-main d-flex align-items-stretch w-100">
+                                <Card.Img variant="top" src={c.image} />
+                                <Card.ImgOverlay className="card-main-overlay">
+                                    <Card.Title className="card-main-title text-center"><span className="card-title-text ">{c.room}</span></Card.Title>
+                                </Card.ImgOverlay>
+                            </Card>
+                        ))}
                     </CardDeck>
                 </Container>
                 {/* End of Home Remodeling Images section  */}
