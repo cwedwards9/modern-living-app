@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./Register.css";
-// import axios from "axios";
+import axios from "axios";
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: "",  password: "" };
+        this.state = { email: "",  password: "", message: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -16,15 +16,26 @@ class Login extends Component {
     }
     handleSubmit(evt) {
         evt.preventDefault();
+        const { email, password } = this.state;
 
-        // axios.post("/login", this.state)
-        //     .then(() => {
-        //         this.setState({ email: "",  password: "" });
-        //     })
+        axios.post("/login", { email: email, password: password })
+            .then((response) => {
+                console.log(response);
+                this.props.routeProps.history.push('/landing');
+            })
+            .catch(error => {
+                this.setState({ email: "",  password: "", message: error.response.data });
+            })
     }
     render() {
         return (
             <div className="Login-Page">
+                {this.state.message
+                    ? <div className="user-log-msg">
+                        <p>{this.state.message}</p>
+                    </div>
+                    : null
+                }
                 <div className="Login">
                     <h1>Log In</h1>
                     <form onSubmit={this.handleSubmit}>
@@ -33,7 +44,8 @@ class Login extends Component {
                             id="email"
                             name="email"
                             value={this.state.email}
-                            type="text"
+                            type="email"
+                            required="required"
                             onChange={this.handleChange}
                         />
                         <label htmlFor="password">Password:</label>

@@ -5,7 +5,7 @@ import axios from "axios";
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.state = { email: "", password: "", f_name: "", l_name: "" };
+        this.state = { email: "", password: "", f_name: "", l_name: "", message: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,15 +17,27 @@ class Register extends Component {
     handleSubmit(evt) {
         evt.preventDefault();
 
-        axios.post("/register", this.state)
-            .then(() => {
+        const { email, password, f_name, l_name } = this.state;
+
+        axios.post("/register", { email: email, password: password, f_name: f_name, l_name: l_name })
+            .then((response) => {
+                console.log(response);
                 this.props.routeProps.history.push('/landing');
-                // this.setState({ email: "", password: "", f_name: "", l_name: "" });
+            })
+            .catch(error => {
+                this.setState({ email: "", password: "", f_name: "", l_name: "", message: error.response.data });
             })
     }
     render() {
         return (
             <div className="Register-Page">
+                {this.state.message
+                    ? <div className="user-log-msg">
+                        <p>{this.state.message}</p>
+                    </div>
+                    : null
+                }
+                
                 <div className="Register">
                     <h1>Sign Up</h1>
                     <form onSubmit={this.handleSubmit}>
@@ -34,7 +46,8 @@ class Register extends Component {
                             id="email"
                             name="email"
                             value={this.state.email}
-                            type="text"
+                            type="email"
+                            required="required"
                             onChange={this.handleChange}
                         />
                         <label htmlFor="password">Password:</label>
@@ -56,7 +69,7 @@ class Register extends Component {
                         />
                         <label htmlFor="l-name">Last Name:</label>
                         <input 
-                            id="l_name"
+                            id="l-name"
                             name="l_name"
                             value={this.state.l_name}
                             type="text"
