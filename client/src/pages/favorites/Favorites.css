@@ -68,12 +68,12 @@
 
 /* Design Favorites List */
 
-.DesignFavoritesPage {
+.DesignFavoritesList {
     background-color: #EDE9E3;
     padding: 3rem 0;
 }
 
-.DesignFavoritesPage h1 {
+.DesignFavoritesList h1 {
     text-align: center;
     margin-bottom: 2rem;
 }

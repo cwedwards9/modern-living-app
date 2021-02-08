@@ -71,12 +71,13 @@ footer {
 .fab {
   color: white;
 }
-i {
+.socialicon i {
   font-size: 20px;
 }
 .subfooter {
   background-color: #7A9392;
   padding: 10px;
+  text-align: center;
 }
 .email-link {
   font-style: italic;
