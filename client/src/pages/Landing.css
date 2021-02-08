@@ -1,23 +1,20 @@
-.landC{
-    width: 17em;
-    height:16em ;
-    position: relative;
-    left: 6em;
+.card-landing{
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
     color:  white ;
+    padding: 40px;
     outline: .1em solid white;   
     outline-offset: -1em;
-    background-color: #7a9392;
+    background-color: #7a9392 !important;
     animation: transitionIn 0.75s;
     transition: all ease-in 0.3s;
-    box-shadow: .2em .2em 0em #ae6e1c;
     margin: 2em;
-    float: right;
+    border-radius: 0% !important;
 }
   
-.landC:hover{
-    color:#ae6e1c;
+.card-landing:hover{
     cursor: pointer;
-    transform:scale(1.1);
+    transform:scale(1.04);
 }
   
 @keyframes transitionIn {
@@ -27,84 +24,95 @@
   
   
 .header{
-    height: 6em;
-    width: 48em;
     background-color: #626366;
+    margin-top: 50px;
+    padding-left: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    outline: .1em solid #626366;   
+    outline-offset: 1.25em;
 }
 
 .h1t{
     color: white;
-    position: relative;
-    top: .1em;
-    font-size: 4em;
-}
-
-
-
-.inspoText{
-    position: relative;
-    left: 1.3em;
-    top: 3em;    
-}
-.guideText{
-    position: relative;
-    left: .8em;
-    top: 3em;     
-}
-.findText{
-    position: relative;
-    left: 1.5em;
-    top: 3em;    
-}
-.projectText{
-    position: relative;
-    left: 1.9em;
-    top: 3em;    
-}
-.favText{
-    position: relative;
-    left: 1.6em;
-    top: 3em;    
-}
-.newText{
-    position: relative;
-    left: 1em;
-    top: 3em;    
+    font-size: 30px;
+    margin:0px !important;
+    font-weight: 100;
 }
 
 .light{
-    font-size: 5em;
-    position: relative;
-    left: 1.4em;
-    top: .8em;
+    
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    font-weight: 100;
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
+
+
 .clip{
-    font-size: 5em;
-    position: relative;
-    left: 1.3em;
-    top: .8em;
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    font-weight: 100;
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
-.help{
-    font-size: 5em;
-    position: relative;
-    left: 1.1em;
-    top: .8em;
+.helping {
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    /* font-weight: 100; */
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
 .check{
-    font-size: 5em;
-    position: relative;
-    left: 1.2em;
-    top: .8em;
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
 .fav{
-    font-size: 5em;
-    position: relative;
-    left: 1.2em;
-    top: .8em;
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
 .plus{
-    font-size: 5em;
-    position: relative;
-    left: 1.2em;
-    top: .8em;
+    color: #7A9392;
+    font-size: 2.4em;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+
+    background-color: white;
+    margin-bottom: 30px;
+    outline: .06em solid #7A9392;   
+    outline-offset: -.1em;
 } 
