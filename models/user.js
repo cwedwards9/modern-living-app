@@ -8,6 +8,10 @@ const UserSchema = new mongoose.Schema ({
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid email address"]
     },
+    password: {
+        type: String,
+        trim: true
+    },
     f_name: {
         type: String,
         trim: true,
@@ -15,7 +19,26 @@ const UserSchema = new mongoose.Schema ({
     l_name: {
         type: String,
         trim: true,
-    }
+    },
+    projects: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Project"
+        }
+    ],
+    contractors: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Contractor"
+        }
+    ],
+    designs: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Design"
+        }
+    ]
 });
+
 
 module.exports = mongoose.model("User", UserSchema);

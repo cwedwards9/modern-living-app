@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 
 // Create Design schema
 const DesignSchema = new mongoose.Schema ({
-    caption: {
+    description: {
         type: String,
-        trim: true,
+        trim: true
     },
-    category: {
+    url: {
         type: String,
-        trim: true,
+        trim: true
     }
 });
 
