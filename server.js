@@ -6,6 +6,11 @@ const projectRoutes = require("./routes/projectRoutes");
 const userRoutes = require("./routes/userRoutes");
 const mongoose = require("mongoose");
 
+const cors = require("cors");
+const session = require("express-session");
+const passport = require("passport");
+const cookieParser = require("cookie-parser");
+
 
 const URL = process.env.MONGODB_URI || "mongodb://localhost/homeDB";
 
@@ -24,15 +29,29 @@ mongoose.connect(URL, {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+// Initialize Passport and allow persistent login session
+app.use(cors({ origin: "https://localhost:3000", credentials: true }));
+app.use(session({ secret: "secretcode", resave: true, saveUninitialized: true }));
+app.use(cookieParser("secretcode"));
+app.use(passport.initialize());
+app.use(passport.session());
+require("./middleware/passport")(passport);
+
+
 // if(process.env.NODE_ENV === 'production') {
 //     app.use(express.static('build'));
 // }
 
 
-app.use(contractorRoutes);
-app.use(designRoutes);
-app.use(projectRoutes);
-app.use(userRoutes);
+app.use("/api", contractorRoutes);
+app.use("/api", designRoutes);
+app.use("/api", projectRoutes);
+app.use("/api", userRoutes);
+
+// app.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'client/build/index.html'));
+// });
 
 const PORT = process.env.PORT || 3001;
 
