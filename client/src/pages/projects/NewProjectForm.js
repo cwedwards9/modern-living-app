@@ -18,7 +18,7 @@ class NewProjectForm extends Component {
     handleSubmit(evt) {
         evt.preventDefault();
 
-        axios.post("/projects", this.state)
+        axios.post("/api/projects", this.state)
             .then(() => {
                 this.setState( { title: "", category: "", notes: "", estimated_cost: "", budget: "" } )
             });
