@@ -1,36 +1,46 @@
 const router = require("express").Router();
-const Project = require("../models/project");
+const db = require("../models");
 
 // Get all projects
 router.get("/projects", (req, res) => {
-    Project.find({})
-        .then(projects => {
-            res.json(projects);
-        })
+    db.User.findById(req.user._id)
+    .populate("projects")
+    .then(foundUser => {
+        res.json(foundUser.projects);
+    })
 })
 
 // Create a new project
 router.post("/projects", (req, res) => {
-    Project.create(req.body)
-        .then(() => {
+    db.User.findById(req.user._id)
+    .then(foundUser => {
+        db.Project.create({...req.body, userid: req.user._id})
+        .then(newProject => {
+            newProject.save();
+            foundUser.projects.push(newProject._id);
+            foundUser.save();
             res.end();
         })
+    });
 });
 
 // Update an existing project
 router.put("/projects/:id", (req, res) => {
-    Project.findByIdAndUpdate(req.params.id, req.body)
-        .then(() => {
-            res.end();
-        })
+    db.Project.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.end();
+    })
 })
 
 // Delete a project
 router.delete("/projects/:id", (req, res) => {
-    Project.findByIdAndDelete(req.params.id)
+    db.Project.findByIdAndDelete(req.params.id)
+    .then(() => {
+        db.User.updateOne({_id: req.user._id}, { $pull: { projects: req.params.id }})
         .then(() => {
             res.end();
         })
+    })
 });
 
 

@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const Contractor = require("../models/contractor");
+const db = require("../models");
+require('dotenv').config();
 
 // Yelp Fusion Business API
 const yelp = require("yelp-fusion");
-
-require('dotenv').config();
 const apiKey = process.env.API_KEY;
 
 // POST route for getting Yelp API data
@@ -22,28 +21,38 @@ router.get("/yelp", (req, res) => {
 });
 
 
-// Show all contractors the user saved in favorites
+// Find the current user and all of the contractors they saved in their favorites
 router.get("/contractors", (req, res) => {
-  Contractor.find({})
-    .then(contractors => {
-      res.json(contractors);
+  db.User.findById(req.user._id)
+    .populate("contractors")
+    .then(foundUser => {
+      res.json(foundUser.contractors);
     })
 });
 
-// Add/Save a new contractor to the favorites
+// Find the current user and Add/Save a new contractor to their favorites
 router.post("/contractors", (req, res) => {
-  Contractor.create(req.body)
-    .then(() => {
-      res.end();
-    })
+  db.User.findById(req.user._id)
+    .then(foundUser => {
+      db.Contractor.create({...req.body, userid: req.user._id})
+      .then((newContractor) => {
+        newContractor.save();
+        foundUser.contractors.push(newContractor._id);
+        foundUser.save();
+        res.end();
+      });
+    });
 });
 
 // Delete a contractor from favorites
 router.delete("/contractors/:id", (req, res) => {
-  Contractor.findByIdAndDelete(req.params.id)
+  db.Contractor.findByIdAndDelete(req.params.id)
+  .then(() => {
+    db.User.updateOne({_id: req.user._id}, { $pull: { contractors: req.params.id }})
     .then(() => {
       res.end();
     })
+  })
 });
 
 
