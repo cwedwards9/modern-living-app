@@ -13,14 +13,14 @@ class ContractorFavoritesList extends Component {
     }
     // Send a GET request to '/contractors' to get the contractors in the db, save to state
     componentDidMount() {
-        axios.get("/contractors")
+        axios.get("/api/contractors")
             .then(res => {
                 this.setState({contractors: res.data});
             })
     }
     // Handle deletion of a contractor from the db, update the state to reflect the deletion
     deleteContractor(id) {
-        axios.delete(`/contractors/${id}`)
+        axios.delete(`/api/contractors/${id}`)
             .then(() => {
                 this.setState({
                     contractors: this.state.contractors.filter(c => c._id !== id)
@@ -32,11 +32,16 @@ class ContractorFavoritesList extends Component {
         return (
             <div className="ContractorFavoritesPage">
                 <NavBar />
-                <div className="ContractorFavoritesList">
-                    <h1>Favorites page</h1>
-                    <div className="favorites-links">
-                        <Link to="/favorites/designs" className="fav-link">Favorited Designs</Link>
+                <div className='favorites-header'>
+                    <div className="favorites-header-border">
+                        <div className='favorites-header-container'>
+                            <h1 >Favorite Contractors |</h1>
+                            <Link to="/favorites/designs" className="fav-link">See Favorited Designs</Link>
+                        </div>
                     </div>
+                </div>
+
+                <div className="ContractorFavoritesList">
                     {this.state.contractors.map(c => (
                         <ContractorFavoritesItem 
                             key={c._id}
