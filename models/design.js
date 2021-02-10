@@ -9,6 +9,10 @@ const DesignSchema = new mongoose.Schema ({
     url: {
         type: String,
         trim: true
+    },
+    userid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 });
 

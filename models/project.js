@@ -21,6 +21,10 @@ const ProjectSchema = new mongoose.Schema ({
     budget: {
         type: Number,
         trim: true
+    },
+    userid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 });
 
