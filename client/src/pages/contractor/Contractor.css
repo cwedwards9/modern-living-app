@@ -1,16 +1,27 @@
+.contractor-main-section {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+
 .ContractorSearchPage {
     background-color: #ede9e3;
+    margin: 0px !important;
 }
 
 .ContractorsList {
-    padding: 3rem 0;
+    padding: 0 0 3rem 4.5rem;
 }
 
 .ContractorItem{
-    margin: 2rem auto;
+    margin: 20px auto ;
     background-color: white;
     /* width: 35em; */
-    box-shadow: 0.5em  0.5em 0em #7a9392 ;
+    outline-style: solid;
+    outline-color: #626366;
+    outline-width: 1px;
+    padding: 0px !important;
+    border-left: 17px solid #AE6E1C;
 }
 
 .search{
@@ -20,8 +31,6 @@
 
 .topbox{
     background-color: #626366;
-    height: 29em;
-    box-shadow: 5px 10px #888888; 
 }
 
 .tittle{
@@ -54,16 +63,23 @@
 .butt{
     background-color: #7a9392 !important;
     outline-color: #7a9392 !important;
+    border-radius: 0% !important;
 }
 
+.h2 .cp  {
+    margin-top: 100px;
+}
 .cp{
-    /* padding: 0%;
-    margin: 0%;   */
     display: block;
+    margin-bottom: 7px !important;
+}
+
+.cp-link {
+    color: grey;
 }
 
 .text{
-    margin-top: 1rem;
+    padding: 20px;
 }
 
 .yelp{
@@ -77,14 +93,39 @@
 
 .heart{
     color: #626366;
-    position: relative;
-    top: .5em;
     cursor: pointer;
-    text-shadow: 1px 1px 1px #ccc;
-    font-size: 2em;
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
 }
 
 .ContractorItem button {
     background-color: transparent;
     border: none;
+}
+
+#contractor-main {
+    padding-bottom: 50px; 
+}
+
+.contractor-text-area {
+    text-align: left;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    padding-right: 120px;
+    padding-left:70px;
+    color: white;
+}
+
+.contractor-header1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+
+.contractor-text {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
 }
