@@ -19,9 +19,9 @@ class Register extends Component {
 
         const { email, password, f_name, l_name } = this.state;
 
-        axios.post("/register", { email: email, password: password, f_name: f_name, l_name: l_name })
+        axios.post("/api/register", { email: email, password: password, f_name: f_name, l_name: l_name })
             .then((response) => {
-                console.log(response);
+                sessionStorage.setItem('user', JSON.stringify(response.data));
                 this.props.routeProps.history.push('/landing');
             })
             .catch(error => {

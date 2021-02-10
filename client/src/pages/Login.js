@@ -18,9 +18,9 @@ class Login extends Component {
         evt.preventDefault();
         const { email, password } = this.state;
 
-        axios.post("/login", { email: email, password: password })
+        axios.post("/api/login", { email: email, password: password })
             .then((response) => {
-                localStorage.setItem('user', JSON.stringify(response.data));
+                sessionStorage.setItem('user', JSON.stringify(response.data));
                 this.props.routeProps.history.push('/landing');
             })
             .catch(error => {

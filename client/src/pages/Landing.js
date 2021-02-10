@@ -9,8 +9,11 @@ class Landing extends Component {
         this.state = {name: ""};
     }
     componentDidMount() {
-        const user = JSON.parse(localStorage.getItem("user"));
-        this.setState({ name: user.fName });
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        if(user) {
+            this.setState({ name: user.fName });
+        }
+        else return;
     }
     render() {
         return (

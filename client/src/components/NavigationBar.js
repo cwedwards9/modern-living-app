@@ -12,7 +12,7 @@ class NavigationBar extends Component {
         this.handleLogout = this.handleLogout.bind(this);
     }
     componentDidMount() {
-        const user = localStorage.getItem("user");
+        const user = sessionStorage.getItem("user");
         if(user) {
             this.setState({ isAuth: true });
         }
@@ -21,9 +21,9 @@ class NavigationBar extends Component {
         }
     }
     async handleLogout() {
-        await axios.get("/logout"); 
+        await axios.get("/api/logout"); 
         this.setState({ isAuth: false });
-        localStorage.clear();
+        sessionStorage.clear();
         window.location.replace("/");
     }
     render() {
