@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Contact.css'
-import { NavigationBar } from '../components/NavigationBar';
+import NavigationBar from '../components/NavigationBar';
 import Button from 'react-bootstrap/Button';
+import './Contact.css'
 import ContactImage from "../images/ContactMainPage.png";
 
 
@@ -19,9 +19,9 @@ class Contact extends Component {
                 <p className="contact-text">Have question for us? Do you need help need finding a skilled professional? Fill out the form below and we will get back to you as soon as we can. We can't wait to help you with your home projects!</p>
               </div>
             </div>
-            <div className="col-lg-5 contact-image-section d-flex" >
+            <div className="col-lg-5 contact-image-section d-flex">
               <div className="contact-image contact-overlap-image">
-                <img src={ContactImage} className="img-fluid" alt="Modern kitchen  " />
+                <img src={ContactImage} className="img-fluid" alt="Modern kitchen" />
               </div>
             </div>
           </div>
@@ -31,10 +31,10 @@ class Contact extends Component {
           <div className='row'>
             <div className='col-md-7'>
               <div className="form-side">
-                <form className="formcontact" >
-                  <div className="contact-input"><input className="contact-input" type="text" name="user_name" placeholder="Name" required /></div>
-                  <div className="contact-input"><input className="contact-input" type="email" name="user_email" placeholder="E-mail" required /></div>
-                  <div><textarea className="contact-input" name="message" placeholder="Message" required /></div>
+                <form className="formcontact">
+                  <input className="contact-input" type="text" name="user_name" placeholder="Name" required />
+                  <input className="contact-input" type="email" name="user_email" placeholder="E-mail" required />
+                  <textarea className="contact-input" name="message" placeholder="Message" rows={3} required />
                   <Button type="submit">SUBMIT</Button>
                 </form>
               </div>
@@ -64,8 +64,8 @@ class Contact extends Component {
           </div>
         </section>
       </div>
-
     );
   }
 };
+
 export default Contact;
