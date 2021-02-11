@@ -5,12 +5,10 @@
 }
 
 .favorites-header-border {
-    align-items: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border: 1px solid black;
+    border-left: none;
     padding: 1.5rem 0;
-    width: 57vw;
+    width: 62vw;
 }
 
 .favorites-header-container {
@@ -23,7 +21,7 @@
     padding: 1.5rem 0 1.5rem 3.5rem;
     font-size: 30px;
     font-weight: 100;
-    width: 55vw;
+    width: 60vw;
     margin-bottom: 0;
     margin-right: 0.25rem;
 }
@@ -35,12 +33,12 @@
 }
 
 .fav-link {
+    font-size: 1rem;
     color: white;
 }
 .fav-link:hover {
     color: white;
 }
-
 
 
 /* ContractorFavoritesList */
@@ -60,7 +58,6 @@
     width: 50vw;
     margin: 0 auto 2.5rem;
     padding: 0.75rem 4rem 0.5rem;
-    border: 1px solid black;
     border-left: 15px solid #AE6E1C;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
@@ -87,48 +84,30 @@
 }
 
 
-
 /* Design Favorites List */
 .DesignFavoritesList {
-    background-color: #EDE9E3;
-    padding: 1.5rem 0;
-}
-
-.DesignFavoritesList h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.DesignFavorites {
     display: flex;
-    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #EDE9E3;
+    padding: 2rem 0 2rem 2rem;
 }
 
 .DesignFavoriteItem {
-    border: 1px solid black;
-    width: 45vw;
-    margin: 0 auto;
-    padding: 1.25rem;
-    /* border-radius: 5px;
-    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1); */
-}
-
-.DesignFavoriteItem h2 {
-    font-size: 1.5rem;
+    width: 30vw;
+    margin: 1rem 0.5rem;
 }
 
 .DesignFavoriteItem img {
-    display: block;
-    margin: 0 auto 0.25rem;
-    width: 75%;
+    margin: 0 auto 0.5rem;
+    width: 100%;
 }
 
 .DesignFavoriteItem button {
     background-color: #7A9392;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     display: block;
     margin: 0 auto;
+    border: none;
 }
-

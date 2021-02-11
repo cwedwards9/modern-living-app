@@ -34,21 +34,19 @@ class DesignFavoritesList extends Component {
                 <div className='favorites-header'>
                     <div className="favorites-header-border">
                         <div className='favorites-header-container'>
-                            <h1 >Favorite Desgins |</h1>
+                            <h1>Favorite Desgins |</h1>
                             <Link to="/favorites/contractors" className="fav-link">See Favorited Contractors</Link>
                         </div>
                     </div>
                 </div>
 
                 <div className="DesignFavoritesList">
-                    <div className="DesignFavorites">
-                        {this.state.designs.map(d => (
-                            <div className="DesignFavoriteItem" key={d._id}>
-                                <img src={d.url} alt={d.description} />
-                                <button onClick={() => this.deleteDesign(d._id)}>Remove</button>
-                            </div>
-                        ))}
-                    </div>
+                    {this.state.designs.map(d => (
+                        <div className="DesignFavoriteItem" key={d._id}>
+                            <img src={d.url} alt={d.description} />
+                            <button onClick={() => this.deleteDesign(d._id)}>Remove</button>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
