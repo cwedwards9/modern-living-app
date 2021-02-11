@@ -6,7 +6,7 @@ import "./NavigationBar.css";
 import ModernLivingLogoVertical from "../images/ModernLivingLogoVertical.png"
 
 class NavigationBar extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state = { isAuth: false };
         this.handleLogout = this.handleLogout.bind(this);
@@ -21,6 +21,7 @@ class NavigationBar extends Component {
         }
     }
     async handleLogout() {
+        // log user out of session on the backend
         await axios.get("/api/logout"); 
         this.setState({ isAuth: false });
         sessionStorage.clear();
@@ -29,7 +30,7 @@ class NavigationBar extends Component {
     render() {
         return (
             <div>
-                <div className=" row signup">
+                <div className="row signup">
                     <div className='col-s-8'>
                     </div>
                     {this.state.isAuth
@@ -59,7 +60,7 @@ class NavigationBar extends Component {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ml-auto">
                                 <Nav.Item><Nav.Link href="/landing">PROFILE</Nav.Link></Nav.Item>
-                                <Nav.Item><Nav.Link href="/#contract">CONTACT</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link href="/contact">CONTACT</Nav.Link></Nav.Item>
                             </Nav>
                         </Navbar.Collapse>
                         :
