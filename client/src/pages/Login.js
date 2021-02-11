@@ -56,8 +56,7 @@ class Login extends Component {
                             type="password"
                             onChange={this.handleChange}
                         />
-
-                        <button>Sign Up</button>
+                        <button>Log In</button>
                     </form>
                 </div>
                 <div className="user-access-links">
