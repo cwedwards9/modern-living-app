@@ -13,9 +13,9 @@ router.post("/register", (req, res) => {
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new User({ email: email, password: hashedPassword, f_name: f_name, l_name: l_name });
       await newUser.save();
-      req.login(newUser, error => {
+      req.logIn(newUser, error => {
         if(error) return next(error);
-        res.json(newUser);
+        res.json({ fName: newUser.f_name, lName: newUser.l_name });
       })
     }
   });
@@ -30,7 +30,7 @@ router.post("/login", (req, res, next) => {
     else {
       req.logIn(user, error => {
         if(error) throw error;
-        res.json({ id: user._id, fName: user.f_name });
+        res.json({ fName: user.f_name, lName: user.l_name });
       })
     }
   })(req, res, next);
@@ -42,6 +42,18 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.end();
 });
+
+
+// Check user authentication
+router.get("/isAuthenticated", (req, res) => {
+  console.log(req.user)
+  if (req.isAuthenticated()) {
+    res.json(req.user);
+  }
+  else {
+    res.status(409);
+  }
+})
 
 
 module.exports = router;
