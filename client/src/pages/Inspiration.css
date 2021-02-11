@@ -1,7 +1,16 @@
+.inspiration-results {
+    margin-bottom: 0px !important;
+}
+
 .inspiration-title {
     justify-content: center;
     padding-top: 40px;
 }
+
+.unsplash-image-grid {
+    padding-bottom: 100px;
+}
+
 .inspiration-title2 {
     justify-content: center;
 }
@@ -95,6 +104,8 @@
 .inspiration-image-unsplash {
     margin-bottom: 15px;
     margin-top:15px;
+    background-color: #EDE9E3;
+    /* box-shadow: 1px 1px 8px #ededed; */
 }
 
 .inspiration-image-unsplash button {
@@ -106,6 +117,8 @@
     position: relative;
     float: right;
     color: #7a9392;
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 .fa-heart-inspiration:hover {
@@ -113,6 +126,10 @@
     float: right;
     color: #7a9392;
     cursor: pointer;
+}
+
+.inspiration-image-unsplash .fas {
+    color: red;
 }
 
 .inspiration-button {
@@ -145,9 +162,11 @@
 
 .InspirationSearch p {
     font-size: 1.25rem;
+    font-family: 'Open Sans', sans-serif;;
     text-align: center;
     display: block;
     margin-bottom: 2rem;
+    font-weight: 100;
 }
 
 .InspirationSearch form {
@@ -159,14 +178,30 @@
     margin-right: 1rem;
     height: 2.5rem;
     width: 50%;
-    border-radius: 5px;
-    border: none;
+    border: solid;
+    border-width: 1px;
+    border-color: #626366;
     padding-left: 0.75rem;
 }
 
 .InspirationSearch form button {
     background-color: #7A9392;
-    border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 0px;
     padding: 0.375rem 0.75rem;
+}
+
+.inspo-image {
+    overflow-y: auto;
+}
+
+.inspo-img-wrapper {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.inspo-search-btn {
+    border: none;
+    border-radius: 0px;
 }
