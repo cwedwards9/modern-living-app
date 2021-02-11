@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InspirationItem from "./InspirationItem";
 import "./Inspiration.css";
 import axios from "axios";
-import NavBar from '../components/NavigationBar';
+import NavBar from '../../components/NavigationBar';
 import { Container, Row } from "reactstrap";
 import Divider from '@material-ui/core/Divider';
 

@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Landing from "../pages/Landing";
-import Inspiration from "../pages/Inspiration";
+import Inspiration from "../pages/inspiration/InspirationSearch";
 import Starter from "../pages/Starter";
 import ContractorSearch from "../pages/contractor/ContractorSearch";
 import Projects from "../pages/projects/Projects";
