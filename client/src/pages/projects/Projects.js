@@ -26,12 +26,12 @@ class Projects extends Component {
             })
     }
     // Handle update of a project in the db and update the state to reflect the change of a project
-    editProject(id, updatedNotes) {
-        axios.put(`/api/projects/${id}`, {notes: updatedNotes})
+    editProject(id, updatedProj) {
+        axios.put(`/api/projects/${id}`, updatedProj)
             .then(() => {
                 const updatedProjects = this.state.projects.map(project => {
                     if(project._id === id){
-                        return {...project, notes: updatedNotes}
+                        return {...project, ...updatedProj}
                     }
                     return project;
                 });
