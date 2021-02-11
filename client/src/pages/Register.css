@@ -2,7 +2,9 @@
 .Register-Page,
 .Login-Page {
     padding: 3rem 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    background-color: #EDE9E3;
+    min-height: 90vh;
 }
 
 .Register,
@@ -11,8 +13,8 @@
     width: 35vw;
     margin: 0 auto 1rem;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    
+    border-radius: 2px;
+    background-color: white;
 }
 
 .Register form,
