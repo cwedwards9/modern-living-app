@@ -6,6 +6,7 @@ import { Container, Row, Col, Form } from "reactstrap";
 import Divider from '@material-ui/core/Divider';
 import { Button, Card, CardDeck } from 'react-bootstrap';
 import Testimony from './TestimonyCarousel';
+import Fade from 'react-reveal/Fade';
 import "./Home.css";
 
 import KitchenHome from "../images/KitchenHome.png";
@@ -22,8 +23,8 @@ import Media400 from "../images/Media400x400.jpg";
 import Living400 from "../images/Living400x400.jpg";
 
 const cardRooms = [ 
-    {room: "KITCHEN", image: Kitchen400}, {room: "BATHROOM", image: Bathroom400}, 
-    {room: "MEDIA ROOM", image: Media400}, {room: "LIVING ROOM", image: Living400} 
+    {id: 1, room: "KITCHEN", image: Kitchen400}, {id: 2, room: "BATHROOM", image: Bathroom400}, 
+    {id: 3, room: "MEDIA ROOM", image: Media400}, {id: 4, room: "LIVING ROOM", image: Living400} 
 ];
 
 
@@ -34,6 +35,7 @@ class Home extends Component {
                 <NavigationBar />
 
                 {/* Header section */}
+                <Fade>
                 <header id="home">
                     <div className="row banner">
                         <div className="banner-text">
@@ -61,7 +63,7 @@ class Home extends Component {
                 <Container className="cards">
                     <CardDeck className="d-flex" >
                         {cardRooms.map(c => (
-                            <Card className="card-main d-flex align-items-stretch w-100">
+                            <Card key={c.id} className="card-main d-flex align-items-stretch w-100">
                                 <Card.Img variant="top" src={c.image} />
                                 <Card.ImgOverlay className="card-main-overlay">
                                     <Card.Title className="card-main-title text-center"><span className="card-title-text ">{c.room}</span></Card.Title>
@@ -163,7 +165,7 @@ class Home extends Component {
                             <div className="help-text-area ">
                                 <span className="header1" style={{ color: 'white' }}>GET</span>
                                 <span className="header2" style={{ color: 'white' }}> STARTED</span>
-                                <p className="help-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a say because you forgot that one thing?</p>
+                                <p className="help-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a day because you forgot that one thing?</p>
                                 <p className="help-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
                                 <Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
@@ -240,7 +242,7 @@ class Home extends Component {
                     </div>
                 </section>
                 {/* End of newsletters section */}
-
+                </Fade>
             </div>
         );
     }
