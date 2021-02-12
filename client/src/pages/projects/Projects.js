@@ -44,7 +44,7 @@ class Projects extends Component {
             <div className="ProjectsPage">
                 <NavBar />
                 <div className="ProjectsList">
-                {this.state.projects.map(p => (
+                {this.state.projects && this.state.projects.map(p => (
                     <ProjectItem 
                         key={p._id}
                         id={p._id}
