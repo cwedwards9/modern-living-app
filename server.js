@@ -31,7 +31,8 @@ app.use(express.json());
 
 
 // Initialize Passport and allow persistent login session
-app.use(cors({ origin: "https://localhost:3000", credentials: true }));
+// app.use(cors({ origin: "https://localhost:3000", credentials: true }));
+app.use(cors());
 app.use(session({ secret: "secretcode", resave: true, saveUninitialized: true }));
 app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
