@@ -1,0 +1,155 @@
+.starter-body{
+  margin:0px;
+  padding:0px;
+}
+
+.starter-flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  margin-left:  75px;
+  margin-right:  75px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.starter-section {
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+}
+
+.starter-cards-section {
+  background-color: #7a9392;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+}
+
+.starter-key-section {
+  background-color: red;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+}
+
+.starter-accordian-section {
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  background-color: aqua;
+}
+
+.starter-title {
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.starter-title2 {
+  justify-content: center;
+}
+​
+.starter-header1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  color: #626366;
+  padding: 0px;
+  margin: 0px;
+  white-space: pre-wrap;
+}
+​
+.starter-header2 {
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: #626366;
+}
+​
+.starter-button {
+  background-color: transparent !important;
+  color: transparent !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border-color: transparent !important;
+  border-radius: 0px;
+}
+​
+.starter-card-title {
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 40%;
+  font-family: 'Playfair Display', serif; 
+}
+
+.starter-cards-1 {
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  text-align: center;
+  align-items: center;
+  display: block;
+  cursor: pointer;
+  flex-wrap: wrap;
+  outline: .1em solid white;   
+  outline-offset: -1em;
+}
+
+.starter-cards-1:hover {
+  cursor: pointer;
+  transform:scale(1.04);
+}
+
+.starter-card-text {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  align-content: center;
+  font-size: 20px;
+  letter-spacing: .75px;
+  margin-top:2%;
+}
+
+.starter-box {
+  width: 60vw;
+  margin:  0 auto;
+}
+
+.main-accord{
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+}
+
+.accord {
+  border-left: 17px solid #AE6E1C !important;
+  border-radius: 0px !important;
+  margin-bottom: 10px;
+}
+
+.main-dropdown-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #626366;
+}
+
+.fa-sort-down {
+  position: absolute;
+  right: 0;
+  color: #626366;
+  padding: 5px;
+}
+
+option {
+  color: #626366
+}
+
+.starter-icon {
+  color: white;
+  font-size: 2.4em;
+  width: 1.6em;
+  text-align: center;
+  line-height: 1.6em;
+  margin-top: 30px;
+}
