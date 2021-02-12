@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const contractorRoutes = require("./routes/contractorRoutes");
 const designRoutes = require("./routes/designRoutes");
 const projectRoutes = require("./routes/projectRoutes");
@@ -51,8 +52,9 @@ app.use("/api", designRoutes);
 app.use("/api", projectRoutes);
 app.use("/api", userRoutes);
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+// Send requests to the React App
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 
