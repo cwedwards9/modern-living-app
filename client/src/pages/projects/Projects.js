@@ -15,7 +15,7 @@ class Projects extends Component {
     componentDidMount() {
         axios.get("/api/projects")
             .then(res => {
-                this.setState({projects: res.data});
+                this.setState({ projects: [res.data] });
             })
     }
     // Handle deletion of a project in the db and update state to reflect deletion
