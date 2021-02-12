@@ -78,7 +78,7 @@ const footer = () => (
     <div className='subfooter' style={{ color: 'darkgrey', backgroundColor: '#2E2E2E' }}>
       <div className='row'>
         <div className='col-lg-12'>
-          <div className='footer-content'>Created by Chase Edwards, Chris Morrow, Nancy Lewis and Ashley Anness.</div>
+          <div className='footer-content'>Created by Chase Edwards, Chris Morrow, and Ashley Anness.</div>
         </div>
       </div>
     </div>
