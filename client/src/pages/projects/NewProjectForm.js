@@ -47,6 +47,8 @@ class NewProjectForm extends Component {
                                 <option value="Kitchen">Kitchen</option>
                                 <option value="Bathroom">Bathroom</option>
                                 <option value="Living Room">Living Room</option>
+                                <option value="Media Room">Media Room</option>
+                                <option value="Bedroom">Bedroom</option>
                                 <option value="Basement">Basement</option>
                             </select>
 
