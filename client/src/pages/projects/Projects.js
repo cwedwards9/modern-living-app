@@ -15,7 +15,6 @@ class Projects extends Component {
     componentDidMount() {
         axios.get("/api/projects")
             .then(res => {
-                console.log(res);
                 this.setState({projects: res.data});
             })
     }
