@@ -162,11 +162,11 @@ class Home extends Component {
                 <section id="started">
                     <div className="row align-items-center" >
                         <div className="col-lg-7  " style={{ backgroundColor: '#626366' }}>
-                            <div className="help-text-area ">
+                            <div className="start-text-area">
                                 <span className="header1" style={{ color: 'white' }}>GET</span>
                                 <span className="header2" style={{ color: 'white' }}> STARTED</span>
-                                <p className="help-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a day because you forgot that one thing?</p>
-                                <p className="help-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
+                                <p className="start-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a day because you forgot that one thing?</p>
+                                <p className="start-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
                                 <Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                             </div>
                         </div>
@@ -181,18 +181,14 @@ class Home extends Component {
 
 
                 {/* Help section  */}
-                <section id="help" className="px-0 d-flex">
-                    <div className="row help-bg px-0" >
-                        <div className="col-lg-6 px-0 help-contractor order-2 order-lg-1" >
-                            <img src={Contractor} alt="Modern kitchen " />
-                        </div>
-                        <div className="col-lg-6 order-1 order-lg-2" >
-                            <div className="about-text-area">
-                                <span className="header1" >NEED HELP?</span>
-                                <p className="help-text" style={{ color: ' #626366' }}>Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                                <Link to="/register"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
-                            </div>
-                        </div>
+                <section className="help-section help-bg">
+                    <div className="handyman">
+                        <img src={Contractor} alt="Handyman with a toolbelt" />
+                    </div>
+                    <div className="help-text-area">
+                        <span className="help-header">NEED HELP?</span>
+                        <p className="help-text" style={{ color: ' #626366' }}>Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
+                        <Link to="/register"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">SIGN-UP</Button></Link>
                     </div>
                 </section>
                 {/* End of help section */}

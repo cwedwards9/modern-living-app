@@ -274,19 +274,14 @@ header .banner-text hr {
     width: 100%;
     transition: 0.5s all ease-in-out;
 }
-.inspo-image:hover img {
-    transform: scale(1.25);
-}
+
 /* -----------------Get Started section -----------------*/
 #started {
     margin-top: 200px;
     margin-bottom: 200px;
 }
-/* --------------------HELP Started section --------------------*/
-#help{
-    background-color: white !important;
-}
-.help-text-area {
+
+.start-text-area {
     text-align: left;
     padding-top: 150px;
     padding-bottom: 150px;
@@ -294,14 +289,20 @@ header .banner-text hr {
     padding-left:50px;
     color: white;
 }
-.help-text {
+.start-text {
     font-size: 18px;
     font-weight: 200;
 }
+
+/* --------------------HELP Started section --------------------*/
+section.help-section {
+    display: flex;
+    justify-content: flex-start;
+    height: 500px;
+}
+
 .help-bg {
     position: relative;
-    /* height: 700px;
-    min-height: 500px; */
     width: 100%;
     background: url(../images/ContactorBGImage.jpg) no-repeat top center;
     background-size: cover !important;
@@ -309,14 +310,27 @@ header .banner-text hr {
     text-align: center;
     overflow: hidden;
 }
-.help-contractor {
-    padding: 0px;
-    position: absolute;
-    /* height: 400px; */
-    align-items: flex-end;
-      display: flex;
-      justify-content: flex-end;
+
+.handyman {
+    width: 60%;
 }
+.handyman img {
+    height: 100%;
+}
+
+.help-text-area {
+    padding-top: 100px;
+    width: 40%;
+    text-align: left;
+}
+.help-header {
+    font-size: 2rem;
+}
+.help-text {
+    font-size: 18px;
+    font-weight: 200;
+}
+
 /*---------------------------testimony------------------------*/
 .wraper-testimony{
     background-size: cover;
