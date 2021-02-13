@@ -50,7 +50,6 @@ class Home extends Component {
                  {/* Home Remodeling section  */}
                 <Container fluid style={{ backgroundColor: '#ede9e3' }}>
                     <div>
-
                         <Row className="home-title">
                             <span className="header1">HOME REMODELING </span>
                         </Row>
@@ -64,7 +63,7 @@ class Home extends Component {
                     <CardDeck className="d-flex" >
                         {cardRooms.map(c => (
                             <Card key={c.id} className="card-main d-flex align-items-stretch w-100">
-                                <Card.Img variant="top" src={c.image} />
+                                <Card.Img className="remodeling-img" variant="top" src={c.image} />
                                 <Card.ImgOverlay className="card-main-overlay">
                                     <Card.Title className="card-main-title text-center"><span className="card-title-text ">{c.room}</span></Card.Title>
                                 </Card.ImgOverlay>

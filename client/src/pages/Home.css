@@ -185,12 +185,17 @@ header .banner-text hr {
 .home {
     margin: 20px;
 }
+.remodeling-img {
+    z-index: 1;
+}
+
 .card-main-overlay {
     background-color: white;
     opacity: 90%;
     margin: 20px;
     justify-content: center;
     border-radius: 0px;
+    z-index: 2;
   }
 .card-img-overlay {
     background-color: white;
