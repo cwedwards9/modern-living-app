@@ -82,25 +82,6 @@ function Starter() {
                         )
                     })}
                 </div>
-
-                {/* Help section  */}
-                <section id="help" className="px-0 d-flex">
-                    <div className="row help-bg px-0" >
-                        <div className="col-lg-6 px-0 help-contractor order-2 order-lg-1" >
-                            <img src={Contractor} alt="HandyMan " />
-                        </div>
-                        <div className="col-lg-6 order-1 order-lg-2" >
-                        
-                            <div className="about-text-area">
-                                <span className="header1" >NEED HELP?</span>
-                                <p className="help-text" style={{ color: ' #626366' }}>Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                                <Link to="/contractor"><Button variant="outline-dark" style={{ marginRight: "10px", borderRadius: "0px" }} size="md">FIND HELP</Button></Link>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </section>
-                {/* End of help section */}
             </div>
         </>
     );
