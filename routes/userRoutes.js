@@ -3,6 +3,7 @@ const User = require("../models/user");
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
 
+
 // Creating a new user
 router.post("/register", (req, res) => {
   const { email, password, f_name, l_name } = req.body;
@@ -42,18 +43,6 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.end();
 });
-
-
-// Check user authentication
-router.get("/isAuthenticated", (req, res) => {
-  console.log(req.user)
-  if (req.isAuthenticated()) {
-    res.json(req.user);
-  }
-  else {
-    res.status(409);
-  }
-})
 
 
 module.exports = router;
