@@ -29,7 +29,7 @@ class NavigationBar extends Component {
     }
     render() {
         return (
-            <div>
+            <nav>
                 <div className="row signup">
                     <div className='col-s-8'>
                     </div>
@@ -76,7 +76,7 @@ class NavigationBar extends Component {
                         </Navbar.Collapse>
                     }
                 </Navbar>
-            </div>
+            </nav>
         )
     }
 }
