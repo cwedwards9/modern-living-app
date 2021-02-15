@@ -11,16 +11,14 @@ class InspirationItem extends Component {
         this.setState({ isSaved: true });
     }
     render() {
-        const { url, desc, className } = this.props;
+        const { url, desc } = this.props;
         return (
-            <div className={className}>
-                <div className="inspiration-image-unsplash">
-                    <img src={url} alt={desc} className="img-responsive inspo-image d-flex" />
-                    {this.state.isSaved
-                        ? <button onClick={() => { this.handleSave(desc, url) }}><i className="fas fa-heart fa-heart-inspiration"></i></button>
-                        : <button onClick={() => { this.handleSave(desc, url) }}><i className="far fa-heart fa-heart-inspiration"></i></button>
-                    }
-                </div>
+            <div className="inspiration-result-item">
+                <img src={url} alt={desc} />
+                {this.state.isSaved
+                    ? <button onClick={() => { this.handleSave(desc, url) }}><i style={{color: "red"}} className="fas fa-heart"></i></button>
+                    : <button onClick={() => { this.handleSave(desc, url) }}><i className="far fa-heart"></i></button>
+                }
             </div>
         );
     }

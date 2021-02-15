@@ -3,8 +3,6 @@ import InspirationItem from "./InspirationItem";
 import "./Inspiration.css";
 import axios from "axios";
 import NavBar from '../../components/NavigationBar';
-import { Container, Row } from "reactstrap";
-import Divider from '@material-ui/core/Divider';
 
 
 class Inspiration extends Component {
@@ -39,49 +37,39 @@ class Inspiration extends Component {
 
     render() {
         return (
-            <div className="Inspiration" style={{ backgroundColor: '#ede9e3' }}>
+            <main className="Inspiration">
                 <NavBar />
-                <div style={{ backgroundColor: '#ede9e3' }}>
-                    <Container fluid >
-                        <div>
-                            <Row className="inspiration-title">
-                                <span className="inspiration-header1">SOME</span>
-                            </Row>
-                            <Row className="inspiration-title2">
-                                <span className="inspiration-header2">INSPIRATION<Divider /></span>
-                            </Row>
-                        </div>
+                <section className="InspirationSearch">
+                    <div className="inspiration-header">
+                        <h1>SOME<span style = {{display: "block"}}>INSPIRATION</span></h1>
+                    </div>
 
-                        <div className="InspirationSearch">
-                            <p>We want to assist you by finding the best designs for your next project.</p>
-                            <form onSubmit={this.handleSubmit}>
-                                <input
-                                    name="searchTerm"
-                                    value={this.state.searchTerm}
-                                    type="text"
-                                    onChange={this.handleChange}
-                                />
-                                <button className="inspo-search-btn">SEARCH</button>
-                            </form>
-                        </div>
-                    </Container>
-                </div>
+                    <div className="InspirationForm">
+                        <p>We want to assist you by finding the best designs for your next project.</p>
+                        <form onSubmit={this.handleSubmit}>
+                            <input
+                                name="searchTerm"
+                                value={this.state.searchTerm}
+                                type="text"
+                                onChange={this.handleChange}
+                            />
+                            <button>SEARCH</button>
+                        </form>
+                    </div>
+                </section>
 
                 {/* Results */}
-                <Container className="inspiration-results" style={{ backgroundColor: '#ede9e3' }}>
-                    <div className="row unsplash-image-grid d-flex">
-                        {this.state.designs.map(d => (
-                            <InspirationItem 
-                                className="col-sm-4 col-md-4" 
-                                key={d.id}
-                                url={d.urls.full}
-                                desc={d.alt_description}
-                                saveDesign={this.saveDesign}
-                            />
-                        ))}
-                    </div>
-                </Container>
-            </div>
+                <section className="inspiration-results">
+                    {this.state.designs.map(d => (
+                        <InspirationItem
+                            key={d.id}
+                            url={d.urls.full}
+                            desc={d.alt_description}
+                            saveDesign={this.saveDesign}
+                        />
+                    ))}
+                </section>
+            </main>
         );
     }
 }
