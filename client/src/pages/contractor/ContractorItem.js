@@ -16,19 +16,18 @@ class ContractorItem extends Component {
     render() {
         const { name, phone, locationOne, locationTwo, rating, url } = this.props;
         return (
-            <div className="ContractorItem col-lg-6 mb-0">
-                {/* <i className='yelp fab fa-yelp'></i> */}
-                <div className='text' > 
-                    <h2 className='cp'>{name}</h2>
-                    <p className='cp'>{phone}</p>
-                    <p className='cp'>{locationOne}, {locationTwo}</p>
-                    <i className='cp fas fa-star'>{rating} / 5 STARS </i>
-                    <a className='cp cp-link' href={url}>SEE REVIEWS</a>
+            <div className="ContractorItem">
+                <div className="ContractorItem-heading">
+                    <h2>{name}</h2>
                     {this.state.isSaved 
                         ? <button onClick={this.saveContractor}><i style={{color: "red"}} className='heart fas fa-heart'></i></button>
                         : <button onClick={this.saveContractor}><i className='heart fas fa-heart'></i></button>
                     }
-                </div>    
+                </div>
+                <p>{phone}</p>
+                <p>{locationOne}, {locationTwo}</p>
+                <p><i className="fas fa-star"></i> {rating} / 5</p>
+                <a href={url}>See Reviews</a>
             </div>
         ); 
     }
