@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+// import { Link } from "react-router-dom";
 import NavBar from "../components/NavigationBar";
-import { Container, Row, Card, CardDeck } from 'react-bootstrap';
 import './Landing.css'
+
+const cardInfo = [
+    { id: 1, title: "Inspiration", link: "/inspiration", iconClass: "far fa-lightbulb" }, { id: 2, title: "Starter Guides", link: "/starter", iconClass: "far fa-clipboard" }, 
+    { id: 3, title: "Find Help", link: "/contractor", iconClass: "fas fa-hands-helping" }, { id: 4, title: "Favorites", link: "/favorites/contractors", iconClass: "far fa-heart" },
+    { id: 5, title: "Projects", link: "/projects", iconClass: "fas fa-tasks" }, { id: 6, title: "New Project", link: "/newproject", iconClass: "fas fa-plus" }
+];
 
 class Landing extends Component {
     constructor(props) {
@@ -17,46 +23,26 @@ class Landing extends Component {
     }
     render() {
         return (
-            <div style={ {backgroundColor:"#ede9e3", paddingBottom:"10em",overflow:"hidden"}}>
+            <main className="landing-page">
                 <NavBar />
-                
-                <Row>
-                    <div className="col-md-7 px-0">
-                        <div className='header'>
-                            <h1 className='h1t'>Welcome, {this.state.name}</h1>
-                        </div>
+
+                <section className="landing-head">
+                    <div className="landing-welcome">
+                        <h1>Welcome, {this.state.name}</h1>
                     </div>
-                </Row>
-                <Container>
-                    <CardDeck className="d-flex align-items-stretch" >
-                        <Card className="card-landing  w-100 " >
-                        <Card.Link href="/inspiration"><Card.Title className="card-landing-title text-center"><i className='far fa-lightbulb light' ></i><h3 style={{color: "white"}}>INSPIRATION </h3></Card.Title></Card.Link>
-                        </Card>
-                        <Card className="card-landing w-100 ">
-                        <Card.Link href="/starter"><Card.Title className="card-landing-title text-center"><i className='far fa-clipboard clip ' ></i><h3 style={{color: "white"}}> STARTER GUIDES </h3></Card.Title></Card.Link>
-                        </Card>
-                        <Card className="card-landing w-100 ">
-                        <Card.Link href="/contractor"><Card.Title className="card-landing-title text-center"><i className="fas fa-hands-helping helping"></i><h3 style={{color: "white"}}> FIND HELP </h3></Card.Title></Card.Link>
-                        </Card>
-                    </CardDeck>
+                </section>
 
-                </Container>
-
-                <Container>
-                    <CardDeck className="d-flex align-items-stretch" >
-                        <Card className="card-landing  w-100 " >
-                        <Card.Link href="/favorites/contractors"><Card.Title className="card-landing-title text-center"><i className='far fa-heart fav' ></i><h3 style={{color: "white"}}>FAVORITES </h3></Card.Title></Card.Link>
-                        </Card>
-                        <Card className="card-landing w-100 ">
-                        <Card.Link href="/projects"><Card.Title className="card-landing-title text-center"><i className='fas fa-tasks check' ></i><h3 style={{color: "white"}}> PROJECTS</h3></Card.Title></Card.Link>
-                        </Card>
-                        <Card className="card-landing w-100 ">
-                        <Card.Link href="/newproject"><Card.Title className="card-landing-title text-center"><i className='fas fa-plus plus' ></i><h3 style={{color: "white"}}> NEW PROJECT</h3></Card.Title></Card.Link>
-                        </Card>
-                    </CardDeck>
-
-                </Container>
-            </div>
+                <section className="landing-cards">
+                    {cardInfo.map(card => (
+                        <div className="land-card-item" key={card.id}>
+                            <a href={card.link} className="landing-link">
+                                <i className={card.iconClass} ></i>
+                                <h2>{card.title.toUpperCase()}</h2>
+                            </a>
+                        </div>
+                    ))}
+                </section>
+            </main>
         );
     }
 }

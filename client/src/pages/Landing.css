@@ -1,118 +1,76 @@
-.card-landing{
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
-    color:  white ;
-    padding: 40px;
-    outline: .1em solid white;   
-    outline-offset: -1em;
-    background-color: #7a9392 !important;
-    animation: transitionIn 0.75s;
-    transition: all ease-in 0.3s;
-    margin: 2em;
-    border-radius: 0% !important;
-}
-  
-.card-landing:hover{
-    cursor: pointer;
-    transform:scale(1.04);
-}
-  
-@keyframes transitionIn {
-    from {opacity: 0; transform: translateY(18px);}
-    to {opacity: 1; transform: translateY(0); }
-}
-  
-  
-.header{
-    background-color: #626366;
-    margin-top: 50px;
-    padding-left: 75px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
-    outline: .1em solid #626366;   
-    outline-offset: 1.25em;
+.landing-page {
+    background-color:#ede9e3; 
+    padding-bottom: 3rem;
 }
 
-.h1t{
+.landing-head {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #626366;
+    margin-top: 50px;
+    padding: 20px 0 20px 75px;
+    outline: .1em solid #626366;   
+    outline-offset: 1.25em;
+    width: 60%;
+}
+
+.landing-welcome h1 {
     color: white;
     font-size: 30px;
     margin:0px !important;
     font-weight: 100;
 }
 
-.light{
-    
-    color: #7A9392;
-    font-size: 2.4em;
-    width: 1.6em;
-    text-align: center;
-    line-height: 1.6em;
-    font-weight: 100;
-    background-color: white;
-    margin-bottom: 30px;
-    outline: .06em solid #7A9392;   
-    outline-offset: -.1em;
-} 
+.landing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 2rem 0;
+    margin-top: -100px;
+    opacity: 0;
+    animation: 1s slidefade forwards;
+}
 
+@keyframes slidefade {
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
 
-.clip{
-    color: #7A9392;
-    font-size: 2.4em;
-    width: 1.6em;
-    text-align: center;
-    line-height: 1.6em;
-    font-weight: 100;
-    background-color: white;
-    margin-bottom: 30px;
-    outline: .06em solid #7A9392;   
-    outline-offset: -.1em;
-} 
-.helping {
-    color: #7A9392;
-    font-size: 2.4em;
-    width: 1.6em;
-    text-align: center;
-    line-height: 1.6em;
-    /* font-weight: 100; */
-    background-color: white;
-    margin-bottom: 30px;
-    outline: .06em solid #7A9392;   
-    outline-offset: -.1em;
-} 
-.check{
-    color: #7A9392;
-    font-size: 2.4em;
-    width: 1.6em;
-    text-align: center;
-    line-height: 1.6em;
+.land-card-item {
+    background-color: #7a9392;
+    outline: .1em solid white;   
+    outline-offset: -1em;
+    margin: 2rem 1.5rem;
+    padding: 3rem 1rem 1rem 1rem;
+    width: 300px;
+    height: 250px;
+    transition: transform 0.3s linear;
+}
+.land-card-item:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+}
 
-    background-color: white;
-    margin-bottom: 30px;
-    outline: .06em solid #7A9392;   
-    outline-offset: -.1em;
-} 
-.fav{
+.landing-link:hover {
+    text-decoration: none;
+}
+
+.land-card-item h2 {
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.landing-link i {
     color: #7A9392;
     font-size: 2.4em;
-    width: 1.6em;
+    width: 4rem;
+    display: block;
     text-align: center;
+    margin: 0 auto;
     line-height: 1.6em;
-
     background-color: white;
-    margin-bottom: 30px;
     outline: .06em solid #7A9392;   
     outline-offset: -.1em;
-} 
-.plus{
-    color: #7A9392;
-    font-size: 2.4em;
-    width: 1.6em;
-    text-align: center;
-    line-height: 1.6em;
-
-    background-color: white;
-    margin-bottom: 30px;
-    outline: .06em solid #7A9392;   
-    outline-offset: -.1em;
-} 
+}
