@@ -1,98 +1,48 @@
-#contact-main {
-    margin-bottom: 90px; 
+.contact-page {
+    background-color: #EDE9E3;
+}
+
+.contact-head {
+    display: flex;
+}
+
+.contact-text-area {
+    padding: 150px 70px 150px 50px;
+    color: white;
+    background-color: #626366;
+    width: 60vw;
 }
 
 .contact-header1 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
+    font-size: 2.25rem;
 }
-
 .contact-header2 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 35px;
-    font-weight: 100;
-}
-
-.contact-form-section {
-    margin: 100px;
-    margin-top:0px;
-}
-
-.contact-text-area {
-text-align: left;
-padding-top: 150px;
-padding-bottom: 150px;
-padding-right: 70px;
-padding-left:50px;
-color: white;
+    font-size: 2.25rem;
 }
 
 .contact-text {
     font-size: 18px;
     font-weight: 200;
+    width: 95%;
 }
 
-.contact-image {
-    margin-top: 7%;
-    max-width: 98%;
-}
-
-.contact-overlap-image {
-    margin-right: -14%; 
-    margin-left: -14%;
-}
-
-.contact-image-section {
-    display: block;
-}
-
-.form-side {
-    padding-top: 30px;
-    padding-left: 150px;
-}
-
-.text-side {
-    margin-top: 15px;
-}
-
-.address {
-    padding : 35px;
-    padding-top: 0px;
-    line-height: 1.6;
-}
-
-.heading {
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.contact-list {
+.contact-overlap-image img {
     position: relative;
-    max-width: 320px;
-    display: block;
-    padding: 5px 0 15px;
-    padding-left: 40px;
-    color: #626366 !important;
+    left: -5rem;
+    top: 2rem;
 }
 
-.text-side i {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    font-size: 1.3rem;
-    display: inline-block;
+
+.contact-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
 }
 
-.text-side a {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.formcontact {
-    display: block;
-    max-width: 100% !important;
+.contact-form {
+    width: 55%;
 }
 
 .contact-input {
@@ -100,45 +50,65 @@ color: white;
     font-size: 1rem;
     margin-bottom: 15px;
     background-color: #f5f5f5;
-    border: none;
     padding: 0.5rem;
     resize: none;
-}
-
-form.formcontact textarea {
-    font-size: .9rem;
-    width: 100%;
-    padding: 8px 10px;
     border: 1px solid #ebebeb;
-    margin-bottom: 15px;
 }
 
-.contact-button {
-    position: relative;
-    overflow: hidden;
-    background: none;
-    border-radius: 0;
-    padding: 8px;
-    margin-top: 15px;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-    z-index: 0;
-    background-color: #626366;
+.contact-form button {
+    background-color: #AE6E1C;
+    padding: 0.45rem 0.75rem;
+    border: none;
+    border-radius: 5px;
 }
 
-.contact-text-area span {
-    position: relative;
-    z-index: 3;
+.contact-info {
+    width: 40%;
 }
 
-.fa-phone {
-    color:#7a9392;
+.contact-info h2 {
+    color: rgb(98, 99, 102);
+    font-family: "Open Sans",sans-serif;
+    font-size: 2.25rem;
 }
 
-.fa-map-marker{
-    color:#7a9392;
+.contact-info p {
+    color: #626366;
+    display: block;
+    line-height: 1.6;
 }
 
+.fa-phone, 
+.fa-map-marker,
 .fa-envelope-o {
     color:#7a9392;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 950px) {
+    .contact-head {
+        flex-direction: column;
+    }
+    .contact-text-area {
+        width: 100vw;
+    }
+    .contact-overlap-image {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .contact-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form {
+        width: 80%;
+        margin-bottom: 3rem;
+    }
+    .contact-info {
+        width: 90%;
+        text-align: center;
+    }
 }
