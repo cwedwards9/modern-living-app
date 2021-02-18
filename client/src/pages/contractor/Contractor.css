@@ -8,7 +8,7 @@
 }
 
 .topbox {
-    width: 65%;
+    width: 60%;
     background-color: #626366;
 }
 
@@ -46,8 +46,13 @@ input#location {
     padding: 0.25rem 0.75rem;
 }
 
+.contractor-overlap-image {
+    width: 40%;
+}
+
 .contractor-overlap-image img {
     position: relative;
+    width: 100%;
     left: -5rem;
     top: 2rem;
 }
