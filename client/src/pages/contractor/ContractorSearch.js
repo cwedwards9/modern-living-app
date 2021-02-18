@@ -64,10 +64,8 @@ class ContractorSearch extends Component {
                             </form>
                         </div>
                     </div>
-                    <div>
-                        <div className="contractor-overlap-image">
-                            <img src={ContractorImage} alt="A kitchen under construction with white cupboards and no countertop" />
-                        </div>
+                    <div className="contractor-overlap-image">
+                        <img src={ContractorImage} alt="A kitchen under construction with white cupboards and no countertop" />
                     </div>
                 </section>
 
