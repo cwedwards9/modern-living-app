@@ -98,7 +98,7 @@ class Home extends Component {
                         </div>
                         <img src={MediaRoom} alt="Modern kitchen." />
                         <div>
-                            <h3>LIVING</h3>
+                            <h3>LIVING ROOM</h3>
                         </div>
                         <img src={LivingRoom} alt="Modern kitchen." />
                     </div>
