@@ -106,6 +106,7 @@
 
 .DesignFavoriteItem button {
     background-color: #7A9392;
+    color: white;
     padding: 0.25rem 0.75rem;
     display: block;
     margin: 0 auto;

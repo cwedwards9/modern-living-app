@@ -50,6 +50,7 @@
 
 .InspirationForm form button {
     background-color: #7A9392;
+    color: white;
     border-radius: 0px;
     border: none;
     padding: 0.375rem 0.75rem;
@@ -70,6 +71,7 @@
 
 .inspiration-result-item img {
     margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .inspiration-result-item button {
