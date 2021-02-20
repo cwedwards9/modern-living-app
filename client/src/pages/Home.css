@@ -1,72 +1,3 @@
-/* Spacing */
-.section-space--inner--60 {
-    padding-top: 60px;
-    padding-bottom: 60px;  
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .section-space--inner--60 {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-}
-@media only screen and (max-width: 767px) {
-    .section-space--inner--60 {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-}
-.section-space-outer-30 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.inner {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-/* End Spacing */
-
-/* Scroll Button */
-a.scroll-top {
-    position: fixed;
-    right: 30px;
-    bottom: -60px;
-    z-index: 999;
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.03);
-    display: block;
-    padding: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    color: #FFFFFF;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-@media only screen and (max-width: 479px) {
-    a.scroll-top {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      font-size: 20px;
-    }
-}
-    a.scroll-top.show {
-        visibility: visible;
-        opacity: 1;
-        bottom: 60px;
-    }
-    /* End of scroll button */
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-}
-
-
-
-
 /* ------------Header Bar------------- */
 .home-banner {
     position: relative;
@@ -114,10 +45,23 @@ header .banner {
     color: white;
     font-size: 24px;
     font-weight: 100;
+    margin-bottom: 2rem;
 }
-.button-header {
-    margin-top: 20px;
+
+.banner-btn {
+    color: white;
+    border: 1px solid white; 
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    background-color: #7a9392;
 }
+.banner-btn:hover {
+    color: white;
+    text-decoration: none;
+    opacity: .90;
+}
+
+
 /* ------------Home remodel section---------------- */
 .home-header {
     width: 40vw;
@@ -193,10 +137,23 @@ header .banner {
     text-align: right;
 }
 
-.home-about-text p { 
-    width: 95%;
+.home-about-text p {
+    font-size: 1rem;
+    line-height: 1.50rem;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
+.about-btn {
+    color: white;
+    border: 1px solid white;
+    padding: 0.75rem 0.5rem;
+}
+.about-btn:hover {
+    color: #7A9392;
+    background-color: white;
+    text-decoration: none;
+}
 
 
 /* ----------------inspiration section-----------------------*/
@@ -244,7 +201,6 @@ header .banner {
 }
 
 
-
 /* -----------------Get Started section -----------------*/
 .get-started-section {
     display: flex;
@@ -254,19 +210,26 @@ header .banner {
 
 .started-text-area {
     width: 55vw;
+    height: 450px;
     padding: 100px 70px 100px 50px;
     color: white;
     background-color: #626366;
     text-align: left;
 }
-.start-text {
-    font-size: 18px;
-    font-weight: 200;
+
+.started-header {
+    font-size: 2rem;
 }
 
 .started-btn {
     color: white;
     border: 1px solid white;
+    padding: 0.75rem 0.5rem;
+}
+.started-btn:hover {
+    color: #626366;
+    background-color: white;
+    text-decoration: none;
 }
 
 .get-started-overlap-img {
@@ -278,6 +241,7 @@ header .banner {
 .get-started-overlap-img img {
     width: 100%;
 }
+
 
 /* --------------------HELP Started section --------------------*/
 section.help-section {
@@ -318,6 +282,18 @@ section.help-section {
     font-weight: 200;
 }
 
+.help-btn {
+   color: #626366;
+   border: 1px solid #626366;
+   padding: 0.75rem 0.5rem;
+}
+.help-btn:hover {
+    color: white;
+    background-color: #626366;
+    text-decoration: none;
+}
+
+
 /*---------------------------testimony------------------------*/
 .testimonials {
     background-color: #7A9392;
@@ -341,17 +317,18 @@ section.help-section {
     padding-left: 100px;
 }
 
-
 .wraper-testimony{
     background-size: cover;
     overflow: hidden;
     width: 100%;
     position: relative;
-    padding: 90px;
+    padding: 60px;
 }
+
 .testimony{
     width: 100%;
 }
+
 .slick-prev {
     opacity: 0;
     left: -30px;
@@ -400,45 +377,4 @@ section.help-section {
 }
 .slickdots {
     padding-left:10px;
-}
-
-
-p {
-    line-height: 1.8;
-    display: inline-block;
-}
-
-
-/* newsletter section */
-.newsLetter-section {
-    background-color: #636467;
-    padding: 3rem 0;
-    color: white;
-}
-
-.newsLetter-section h2 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 2rem;
-}
-
-.newsLetter-section div {
-    display: flex;
-    justify-content: space-around;
-}
-
-.newsLetter-form input {
-    width: 25vw;
-    height: 3rem;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: none;
-}
-
-.newsLetter-form button {
-    background-color: #AE6E1C;
-    color: white;
-    height: 3rem;
-    width: 3rem;
-    border: none;
 }
