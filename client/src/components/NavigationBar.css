@@ -1,6 +1,5 @@
 .navbar {
   background-color: #EDE9E3;
-  padding-top: 0rem;
   box-shadow: 0 8px 6px -6px #999;
   width: 100%;
 }
@@ -38,12 +37,22 @@ nav {
   flex-direction: column;
 }
 
-.signup {
- background-color: #7A9392;
- padding: 10px;
- margin: 0px  !important;
+.user-logs {
+  background-color: #7A9392;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.btn-sm {
-  margin-right: 20px;
+.nav-user-link {
+  color: white;
+  border: 1px solid white;
+  padding: 0.40rem 0.5rem;
+  margin-right: 0.75rem;
+}
+.nav-user-link:hover {
+  color: black;
+  background-color: white;
+  text-decoration: none;
 }
