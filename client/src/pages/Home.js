@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 
-import { Button } from 'react-bootstrap';
 import Testimony from './TestimonyCarousel';
 import Fade from 'react-reveal/Fade';
 import "./Home.css";
@@ -36,9 +35,9 @@ class Home extends Component {
                 <Fade>
                 <header className="home-banner">
                     <div className="banner">
-                        <h1 className="banner1">Refresh <span className="banner2">YOUR HOME.</span></h1>
+                        <h1 className="banner1">Refresh <span className="banner2">YOUR HOME</span></h1>
                         <h2 className="banner3">Find everything you need to get started on building your dream home.</h2>
-                        <div className="button-header"><Link to="/register"><Button variant="outline-light" style={{ marginRight: "10px", marginTop: "10px", borderRadius: "0px", backgroundColor: "#7a9392" }} size="lg">SIGN-UP</Button></Link></div>
+                        <Link to="/register" className="banner-btn">SIGN-UP</Link>
                     </div>
                 </header>
                 {/* End Header */}
@@ -52,7 +51,7 @@ class Home extends Component {
                 <div className="home-cards">
                     {cardRooms.map(c => (
                         <div key={c.id} className="home-card-item">
-                            <img className="remodeling-img" src={c.image} />
+                            <img className="remodeling-img" src={c.image} alt={c.room}/>
                             <div className="home-card-overlay">
                                 <h3 className="card-main-title">{c.room}</h3>
                             </div>
@@ -62,16 +61,15 @@ class Home extends Component {
                 {/* End of Home Remodeling Images section  */}
 
 
-
                 {/* About section  */}
                 <section id="about" className="home-about-section">
                     <div className="about-overlap-image">
                         <img src={KitchenHome} alt="Kitchen with white cabinets and wood countertops." />
                     </div> 
                     <div className="home-about-text">
-                        <h2 style={{ color: 'white' }}>OUR PURPOSE</h2>
+                        <h2>OUR PURPOSE</h2>
                         <p>Looking to refresh your home? Need ideas on home improvement and don't know where to start? Modern Living is your go-to site for all of your home improvement needs. </p>
-                        <Link to="/register" style={{color: "white", border: "1px solid white", padding: "0.75rem 0.5rem"}}>SIGN-UP</Link>
+                        <Link to="/register" className="about-btn">SIGN-UP</Link>
                     </div>
                 </section>
                 {/* End of about section */}
@@ -84,11 +82,11 @@ class Home extends Component {
                     </div>
 
                     <div className="inspiration-squares">
-                        <img src={Kitchen} alt="Modern kitchen." />
+                        <img src={Kitchen} alt="Kitchen with white countertops." />
                         <div>
                             <h3>KITCHEN</h3>
                         </div>
-                        <img src={Bathroom} alt="Modern kitchen." />
+                        <img src={Bathroom} alt="A bathroom with white tile walls, white door, a bowl-shaped sink and a circular mirror." />
                         <div>
                             <h3>BATHROOM</h3>
                         </div>
@@ -96,11 +94,11 @@ class Home extends Component {
                         <div>
                             <h3>MEDIA ROOM</h3>
                         </div>
-                        <img src={MediaRoom} alt="Modern kitchen." />
+                        <img src={MediaRoom} alt="A room with a mounted tv on the wall with a fireplace below it. A counch and coffee table faces the tv." />
                         <div>
                             <h3>LIVING ROOM</h3>
                         </div>
-                        <img src={LivingRoom} alt="Modern kitchen." />
+                        <img src={LivingRoom} alt="A brown leather couch with a green plant next to it on the floor. A white coffee table infront of the couch." />
                     </div>
                 </section>
                 {/* End of Inspriation section */}
@@ -109,10 +107,10 @@ class Home extends Component {
                 {/* Get started section  */}
                 <section id="started" className="get-started-section">
                     <div className="started-text-area">
-                        <h1 className="contact-header1">GET STARTED</h1>
+                        <h1 className="started-header">GET STARTED</h1>
                         <p className="start-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a day because you forgot that one thing?</p>
                         <p className="start-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
-                        <Link to="/register" style={{color: "white", border: "1px solid white", padding: "0.75rem 0.5rem"}}>SIGN-UP</Link>
+                        <Link to="/register" className="started-btn">SIGN-UP</Link>
                     </div>
                     <div className="get-started-overlap-img">
                         <img src={GetStarted} alt="A wall with white rectangular tile being put on." />
@@ -129,7 +127,7 @@ class Home extends Component {
                     <div className="help-text-area">
                         <h2 className="help-header">NEED HELP?</h2>
                         <p className="help-text">Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                        <Link to="/register" style={{color: "#626366", border: "1px solid #626366", padding: "0.75rem 0.5rem"}}>SIGN-UP</Link>
+                        <Link to="/register" className="help-btn">SIGN-UP</Link>
                     </div>
                 </section>
                 {/* End of help section */}
@@ -147,20 +145,6 @@ class Home extends Component {
                     </div>
                 </section>
                 {/* End of testimonials section */}
-
-
-                {/* newsletters section  */}
-                <section className="newsLetter-section">
-                    <h2>STAY UP-TO DATE</h2>
-                    <div>
-                        <p>Stay up-to-date with the latetest trends and news from MODERN LIVING.</p>
-                        <form className="newsLetter-form">
-                            <input />
-                            <button><i className="fas fa-envelope"></i></button>
-                        </form>
-                    </div>
-                </section>
-                {/* End of newsletters section */}
                 </Fade>
             </div>
         );
