@@ -30,18 +30,16 @@ class ContractorFavoritesList extends Component {
 
     render() {
         return (
-            <div className="ContractorFavoritesPage">
+            <main className="ContractorFavoritesPage">
                 <NavBar />
-                <div className='favorites-header'>
-                    <div className="favorites-header-border">
-                        <div className='favorites-header-container'>
-                            <h1 >Favorite Contractors |</h1>
-                            <Link to="/favorites/designs" className="fav-link">See Favorited Designs</Link>
-                        </div>
+                <header className='favorites-header'>
+                    <div className='favorites-header-container'>
+                        <h1 >Favorite Contractors |</h1>
+                        <Link to="/favorites/designs" className="fav-link">See Favorited Designs</Link>
                     </div>
-                </div>
+                </header>
 
-                <div className="ContractorFavoritesList">
+                <section className="ContractorFavoritesList">
                     {this.state.contractors.map(c => (
                         <ContractorFavoritesItem 
                             key={c._id}
@@ -55,10 +53,8 @@ class ContractorFavoritesList extends Component {
                             delete={this.deleteContractor}
                         />
                     ))}
-                </div>
-            </div>
-            
-            
+                </section>
+            </main>
         );
     }
 }

@@ -29,26 +29,24 @@ class DesignFavoritesList extends Component {
 
     render() {
         return (
-            <div className="DesignFavoritesPage">
+            <main className="DesignFavoritesPage">
                 <NavBar />
-                <div className='favorites-header'>
-                    <div className="favorites-header-border">
-                        <div className='favorites-header-container'>
-                            <h1>Favorite Desgins |</h1>
-                            <Link to="/favorites/contractors" className="fav-link">See Favorited Contractors</Link>
-                        </div>
+                <header className='favorites-header'>
+                    <div className='favorites-header-container'>
+                        <h1>Favorite Desgins |</h1>
+                        <Link to="/favorites/contractors" className="fav-link">See Favorited Contractors</Link>
                     </div>
-                </div>
+                </header>
 
-                <div className="DesignFavoritesList">
+                <section className="DesignFavoritesList">
                     {this.state.designs.map(d => (
                         <div className="DesignFavoriteItem" key={d._id}>
                             <img src={d.url} alt={d.description} />
                             <button onClick={() => this.deleteDesign(d._id)}>Remove</button>
                         </div>
                     ))}
-                </div>
-            </div>
+                </section>
+            </main>
         );
     }
 }
