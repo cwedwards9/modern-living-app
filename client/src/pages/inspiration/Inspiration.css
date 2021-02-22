@@ -7,7 +7,6 @@
 }
 
 .inspiration-header {
-    width: 40vw;
     margin: 2rem auto 0;
 }
 
@@ -94,5 +93,10 @@
 @media (max-width: 650px) {
     .inspiration-result-item {
         width: 90%;
+    }
+    .InspirationForm form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 }

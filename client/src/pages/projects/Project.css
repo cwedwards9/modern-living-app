@@ -98,3 +98,18 @@
     color: white;
     padding: 0.25rem 0.75rem;
 }
+
+@media (max-width: 900px) { 
+    .ProjectItem {
+        width: 60vw;
+    }
+}
+
+@media(max-width: 650px) {
+    .ProjectsList {
+        padding: 2rem 0;
+    }
+    .ProjectItem {
+        width: 90vw;
+    }
+}

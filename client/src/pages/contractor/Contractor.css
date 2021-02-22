@@ -101,3 +101,30 @@ input#location {
 .ContractorItem .fa-star {
     color: #FD7E14;
 }
+
+
+@media (max-width: 900px) { 
+    .contractor-main {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .topbox {
+        width: 100%;
+    }
+    .contractor-text-area {
+        padding: 50px;
+    }
+    .contractor-overlap-image {
+        display: none;
+    }
+    .ContractorItem {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 650px) { 
+    .ContractorItem {
+        width: 90vw;
+    }
+}
