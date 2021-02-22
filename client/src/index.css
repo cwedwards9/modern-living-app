@@ -3,49 +3,15 @@
 Grey #626366
 Tan #EDE9E3
 Brown #AE6E1C */
-/* End of Colors */
+
 /* Fonts */
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Playfair Display', serif; */
 /* font-family: 'Dancing Script', cursive; */
-/* <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> */
-/* End of Fonts */
-/* Main */
+
 html, body {
   height: 100%;
   max-width: 100%;
   overflow-x: hidden;
   background-color:#ede9e3;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
-  /* font-family: 'Playfair Display', serif; */
-}
-h1 {
-font-size: 39px;
-font-weight: 300;
-}
-h2 {
-font-size: 36px;
-}
-h3 {
-font-size: 22px;
-}
-h4 {
-font-size: 16px;
-  width: 180px;
-  position: relative;
-  padding-left: 30px;
-  padding-bottom: 1em;
-}
-/* h4:before {
-} */
-h5 {
-font-size: 25px;
-letter-spacing: .05rem;
-font-weight: lighter;
-}
-h6 {
-font-size: 9px;
 }
