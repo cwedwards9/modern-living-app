@@ -33,6 +33,7 @@ class Login extends Component {
                 {this.state.message
                     ? <div className="user-log-msg">
                         <p>{this.state.message}</p>
+                        <button onClick={() => this.setState({ message: "" })} >X</button>
                     </div>
                     : null
                 }
