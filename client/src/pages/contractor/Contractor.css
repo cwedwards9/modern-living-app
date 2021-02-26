@@ -120,11 +120,13 @@ input#location {
     }
     .ContractorItem {
         width: 75vw;
+        padding: 0.75rem 2rem 0.5rem;
     }
 }
 
 @media (max-width: 650px) { 
     .ContractorItem {
         width: 90vw;
+        padding: 0.75rem 1rem 0.5rem;
     }
 }
