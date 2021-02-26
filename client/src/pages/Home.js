@@ -37,7 +37,7 @@ class Home extends Component {
                     <div className="banner">
                         <h1 className="banner1">Refresh <span className="banner2">YOUR HOME</span></h1>
                         <h2 className="banner3">Find everything you need to get started on building your dream home.</h2>
-                        <Link to="/register" className="banner-btn">SIGN-UP</Link>
+                        <Link to="/register" className="banner-btn">SIGN UP</Link>
                     </div>
                 </header>
                 {/* End Header */}
@@ -52,9 +52,6 @@ class Home extends Component {
                     {cardRooms.map(c => (
                         <div key={c.id} className="home-card-item">
                             <img className="remodeling-img" src={c.image} alt={c.room}/>
-                            <div className="home-card-overlay">
-                                <h3 className="card-main-title">{c.room}</h3>
-                            </div>
                         </div>
                     ))}
                 </div>
@@ -69,7 +66,7 @@ class Home extends Component {
                     <div className="home-about-text">
                         <h2>OUR PURPOSE</h2>
                         <p>Looking to refresh your home? Need ideas on home improvement and don't know where to start? Modern Living is your go-to site for all of your home improvement needs. </p>
-                        <Link to="/register" className="about-btn">SIGN-UP</Link>
+                        <Link to="/register" className="about-btn">SIGN UP</Link>
                     </div>
                 </section>
                 {/* End of about section */}
@@ -78,12 +75,12 @@ class Home extends Component {
                 {/* Inspriation section */}
                 <section id="inspiration" className="inspiration-section">
                     <div className="home-header">
-                        <h2 id="orange-text">SOME<span style = {{display: "block"}}>INSPIRATION</span></h2>
+                        <h2>SOME<span style = {{display: "block"}}>INSPIRATION</span></h2>
                     </div>
 
                     <div className="inspiration-squares">
-                        <img src={Kitchen} alt="Kitchen with white countertops." />
-                        <div>
+                        <img src={Kitchen} alt="Kitchen with white countertops." className="inspo-img-kitch" />
+                        <div className="inspo-block-kitch">
                             <h3>KITCHEN</h3>
                         </div>
                         <img src={Bathroom} alt="A bathroom with white tile walls, white door, a bowl-shaped sink and a circular mirror." />
@@ -95,10 +92,10 @@ class Home extends Component {
                             <h3>MEDIA ROOM</h3>
                         </div>
                         <img src={MediaRoom} alt="A room with a mounted tv on the wall with a fireplace below it. A counch and coffee table faces the tv." />
-                        <div>
+                        <div className="inspo-block-liv">
                             <h3>LIVING ROOM</h3>
                         </div>
-                        <img src={LivingRoom} alt="A brown leather couch with a green plant next to it on the floor. A white coffee table infront of the couch." />
+                        <img className="inspo-img-liv" src={LivingRoom} alt="A brown leather couch with a green plant next to it on the floor. A white coffee table infront of the couch." />
                     </div>
                 </section>
                 {/* End of Inspriation section */}
@@ -110,7 +107,7 @@ class Home extends Component {
                         <h1 className="started-header">GET STARTED</h1>
                         <p className="start-text">Sometimes the hardest part of home remodeling is not knowing where to start. Who wants to run to Lowe's multiple times a day because you forgot that one thing?</p>
                         <p className="start-text">We have created a checklist to help you jumpstart your project and help you make the best decisions.</p>
-                        <Link to="/register" className="started-btn">SIGN-UP</Link>
+                        <Link to="/register" className="started-btn">SIGN UP</Link>
                     </div>
                     <div className="get-started-overlap-img">
                         <img src={GetStarted} alt="A wall with white rectangular tile being put on." />
@@ -127,7 +124,7 @@ class Home extends Component {
                     <div className="help-text-area">
                         <h2 className="help-header">NEED HELP?</h2>
                         <p className="help-text">Do you need help with interior design or on a plumbing project? Pick what you need help with and we provide you with the best contractors/designers available. </p>
-                        <Link to="/register" className="help-btn">SIGN-UP</Link>
+                        <Link to="/register" className="help-btn">SIGN UP</Link>
                     </div>
                 </section>
                 {/* End of help section */}
@@ -136,12 +133,12 @@ class Home extends Component {
                 {/* Testimonials section  */}
                 <section id="testimonials" className="testimonials test-bg">
                     <h2 className="testimonials-title">TESTIMONIALS</h2>
-                    <div className="row test-text" >
-                        <div className="col-lg-7">
+                    <div className="row test-text d-flex justify-content-center">
+                        <div className="col-md-8">
                             <Testimony />
                         </div>
-                        <div className="col-lg-5 px-0" >
-                        </div>
+                        {/* <div className="col-lg-5 px-0" >
+                        </div> */}
                     </div>
                 </section>
                 {/* End of testimonials section */}

@@ -64,7 +64,6 @@ header .banner {
 
 /* ------------Home remodel section---------------- */
 .home-header {
-    width: 40vw;
     margin: 2rem auto 0;
 }
 
@@ -79,10 +78,11 @@ header .banner {
 .home-cards {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .home-card-item {
-    margin: 2rem 1rem;
+    margin: 2rem 0.5rem;
     width: 20%;
 }
 
@@ -90,24 +90,17 @@ header .banner {
     width: 100%;
 }
 
-.home-card-overlay {
-    position: relative;
-    top: -245px;
-    width: 90%;
-    height: 70%;
-    margin: 0 auto;
-    background-color: white;
-    opacity: 85%;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media(max-width: 800px) {
+    .home-card-item {
+        width: 45%;
+    }
+}
+@media(max-width: 500px) {
+    .home-card-item {
+        width: 90%;
+    }
 }
 
-.card-main-title {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}
 
 
 /* --------------About section------------- */
@@ -115,7 +108,7 @@ header .banner {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0;
+    margin: 3rem 0;
 }
 
 .about-overlap-image {
@@ -155,6 +148,31 @@ header .banner {
     text-decoration: none;
 }
 
+@media (max-width: 900px) {
+    .home-about-section {
+        flex-direction: column;
+    }
+    .about-overlap-image {
+        width: 100vw;
+        position: relative;
+        left: -25px;
+    }
+    .home-about-section {
+        margin: 0;
+    }
+    .about-overlap-image img {
+        width: 100%;
+    }
+    .home-about-text {
+        width: 100vw;
+        height: 300px;
+        padding: 50px;
+        color: white;
+        background-color: #7A9392;
+        text-align: center;
+    }
+}
+
 
 /* ----------------inspiration section-----------------------*/
 .inspiration-section {
@@ -163,9 +181,6 @@ header .banner {
 
 .inspiration-section h2 {
     margin-bottom: 2rem;
-}
-
-#orange-text {
     color:#AE6E1C;
 }
 
@@ -190,6 +205,7 @@ header .banner {
 }
 
 .inspiration-squares h3 {
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2.25rem;
     padding-bottom: 1rem;
@@ -200,6 +216,45 @@ header .banner {
     width: 25%;
 }
 
+@media (max-width: 900px) {
+    .inspiration-squares div,
+    .inspiration-squares img {
+        width: 50%;
+    }
+    .inspo-block-kitch {
+        order: -2;
+    }
+    .inspo-img-kitch {
+        order: -1;
+    }
+    .inspo-img-liv {
+        order: 1;
+    }
+    .inspo-block-liv {
+        order: 2;
+    }
+}
+@media (max-width: 450px) {
+    .inspiration-squares img {
+        width: 100vw;
+    }
+    .inspiration-squares div {
+        width: 100vw;
+        height: 100vw;
+    }
+    .inspo-block-kitch {
+        order: -1;
+    }
+    .inspo-img-kitch {
+        order: -2;
+    }
+    .inspo-img-liv {
+        order: 2;
+    }
+    .inspo-block-liv {
+        order: 1;
+    }
+}
 
 /* -----------------Get Started section -----------------*/
 .get-started-section {
@@ -240,6 +295,27 @@ header .banner {
 
 .get-started-overlap-img img {
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    .get-started-section {
+        flex-direction: column;
+    }
+    .get-started-overlap-img {
+        width: 100vw;
+        position: relative;
+        left: 20px;
+    }
+    .started-text-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 400px;
+        padding: 50px 25px;
+        text-align: center;
+    }
 }
 
 
@@ -293,6 +369,19 @@ section.help-section {
     text-decoration: none;
 }
 
+@media (max-width: 800px) {
+    .handyman,
+    .handyman img {
+        display: none;
+    }
+    section.help-section {
+        justify-content: center;
+    }
+    .help-text-area {
+        width: 75%;
+    }
+}
+
 
 /*---------------------------testimony------------------------*/
 .testimonials {
@@ -312,9 +401,6 @@ section.help-section {
     -webkit-background-size: cover !important;
     text-align: center;
     overflow: hidden;
-}
-.test-text {
-    padding-left: 100px;
 }
 
 .wraper-testimony{
@@ -377,4 +463,11 @@ section.help-section {
 }
 .slickdots {
     padding-left:10px;
+}
+
+
+@media(max-width: 800px) {
+    .test-bg {
+        background: #7A9292;
+    }
 }
