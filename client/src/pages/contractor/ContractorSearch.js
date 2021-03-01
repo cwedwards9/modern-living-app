@@ -42,8 +42,8 @@ class ContractorSearch extends Component {
                             <h1 className="contractor-header">FIND A PROFESSIONAL</h1>
                             <p className="contractor-text">We are here to help you find the best of the best. Search for the project you need help with to see a list of the highest rated providers in your area.</p>
                             <form className="contractor-form" onSubmit={this.handleSubmit}>
-                                <select id="term" name="term" onChange={this.handleChange}>
-                                    <option value="default">Search by Category</option>
+                                <select id="term" name="term" onChange={this.handleChange} required>
+                                    <option value="">Search by Category</option>
                                     <option value="Plumber">Plumber</option>
                                     <option value="Electrician">Electrician</option>
                                     <option value="Carpenter">Carpenter</option>
@@ -59,7 +59,14 @@ class ContractorSearch extends Component {
                                     <option value="General Contractor">General Contractor</option>
                                     <option value="Designer">Designer</option>
                                 </select>
-                                <input id="location" value={this.state.location} name="location" onChange={this.handleChange} placeholder="Location (City/zip)" />
+                                <input 
+                                    id="location" 
+                                    value={this.state.location} 
+                                    name="location" 
+                                    onChange={this.handleChange} 
+                                    placeholder="Location (City/zip)"
+                                    required
+                                />
                                 <button className="contractor-search-btn" type="submit">Submit</button>
                             </form>
                         </div>

@@ -46,7 +46,7 @@ class Login extends Component {
                             name="email"
                             value={this.state.email}
                             type="email"
-                            required="required"
+                            required
                             onChange={this.handleChange}
                         />
                         <label htmlFor="password">Password:</label>
@@ -55,6 +55,7 @@ class Login extends Component {
                             name="password"
                             value={this.state.password}
                             type="password"
+                            required
                             onChange={this.handleChange}
                         />
                         <button>Log In</button>

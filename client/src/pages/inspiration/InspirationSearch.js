@@ -52,6 +52,7 @@ class Inspiration extends Component {
                                 value={this.state.searchTerm}
                                 type="text"
                                 onChange={this.handleChange}
+                                required
                             />
                             <button>SEARCH</button>
                         </form>

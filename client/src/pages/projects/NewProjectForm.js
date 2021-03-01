@@ -39,11 +39,12 @@ class NewProjectForm extends Component {
                                 name="title"
                                 value={this.state.title}
                                 onChange={this.handleChange}
+                                required
                             />
 
                             <label htmlFor="category">Category</label>
-                            <select id="category" name="category" onChange={this.handleChange}>
-                                <option value="default">--Please choose the project type--</option>
+                            <select id="category" name="category" onChange={this.handleChange} required>
+                                <option value="">--Please choose the project type--</option>
                                 <option value="Kitchen">Kitchen</option>
                                 <option value="Bathroom">Bathroom</option>
                                 <option value="Living Room">Living Room</option>
@@ -58,6 +59,7 @@ class NewProjectForm extends Component {
                                 name="notes"
                                 value={this.state.notes}
                                 onChange={this.handleChange}
+                                required
                                 rows={5}
                             ></textarea>
 
@@ -68,6 +70,7 @@ class NewProjectForm extends Component {
                                 name="estimated_cost"
                                 value={this.state.estimated_cost}
                                 onChange={this.handleChange}
+                                required
                             />
 
                             <label htmlFor="">Budget</label>
@@ -77,6 +80,7 @@ class NewProjectForm extends Component {
                                 name="budget"
                                 value={this.state.budget}
                                 onChange={this.handleChange}
+                                required
                             />
 
                             <button>Create</button>
