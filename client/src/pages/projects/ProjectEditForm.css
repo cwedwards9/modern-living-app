@@ -1,0 +1,35 @@
+/* Project Edit Form */
+.Project-edit-form {
+    background-color: white;
+    width: 45vw;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Project-edit-form  h1 {
+    font-size: 1.5rem;
+}
+
+.Project-edit-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.Project-edit-form form input,
+.Project-edit-form form select,
+.Project-edit-form form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.Project-edit-form form button {
+    border: none;
+    border-radius: 2px;
+    background-color: #626366;
+    color: white;
+    padding: 0.25rem 0.75rem;
+}
