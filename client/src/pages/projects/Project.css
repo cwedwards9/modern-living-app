@@ -99,17 +99,83 @@
     padding: 0.25rem 0.75rem;
 }
 
-@media (max-width: 900px) { 
+
+/* Modal - Delete Project Confirmation */
+.project-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    min-height: 30%;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    margin-top: -100px;
+    animation: 1s modalslide 0.5s forwards;
+}
+@keyframes modalslide {
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.project-modal h2 {
+    font-size: 1.5rem;
+}
+
+.project-modal div {
+    display: flex;
+    justify-content: flex-end;
+}
+.project-modal button {
+    margin-left: 1rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.project-modal button.delete-btn-proj {
+    background-color: #F15E5E;
+}
+
+.project-modal button.cancel-btn-proj {
+    background-color: #C1C1C1;
+}
+
+
+
+@media screen and (max-width: 900px) { 
     .ProjectItem {
         width: 60vw;
     }
 }
 
-@media(max-width: 650px) {
+@media screen and (max-width: 750px) {
+    .project-modal {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 650px) {
     .ProjectsList {
         padding: 2rem 0;
     }
     .ProjectItem {
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-modal div {
+        justify-content: center;
     }
 }
