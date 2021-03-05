@@ -4,19 +4,23 @@ import ProjectEditForm from "./ProjectEditForm";
 class ProjectItem extends Component {
     constructor(props) {
         super(props);
-        this.state = { isEditing: false };
+        this.state = { isEditing: false, modal: false };
         this.handleDelete = this.handleDelete.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
-    // On click of the delete button, call the delete method and pass in the project's id
+    // Toggle modal state to show/hide modal
+    toggleModal() {
+        this.setState({ modal: !this.state.modal });
+    }
+    // Delete project based on project id
     handleDelete() {
         this.props.delete(this.props.id)
     }
-    // On click of the Edit button, toggle the state to display the edit form
+    // Toggle isEditing state to show/hide edit form
     toggleForm() {
         this.setState({ isEditing: !this.state.isEditing });
     }
-    // Conditionally render a Project or the Project edit form based on the isEditing state
     render() {
         const { id, title, category, cost, budget, notes, update } = this.props;
 
@@ -39,7 +43,7 @@ class ProjectItem extends Component {
                 <div className="ProjectItem">
                     <div className="project-heading">
                         <h1 className="project-title">{title}</h1>
-                        <button className="delete-proj-btn" onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
+                        <button className="delete-proj-btn" onClick={this.toggleModal}><i className="fas fa-trash"></i></button>
                     </div>
                     <p className="project-category">{category}</p>
                     <div className="costs">
@@ -52,7 +56,19 @@ class ProjectItem extends Component {
             );
         }
         return (
-            result
+            <>
+            {result}
+            {this.state.modal
+                ? <div className="project-modal">
+                    <h2>Are you sure you want to delete the project "{this.props.title}"?</h2>
+                    <div>
+                        <button className="delete-btn-proj" onClick={this.handleDelete}>Delete</button>
+                        <button className="cancel-btn-proj" onClick={this.toggleModal}>Cancel</button>
+                    </div>
+                </div>
+                : null
+            }
+            </>
         );
     }
 }
