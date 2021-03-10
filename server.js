@@ -51,10 +51,26 @@ app.use("/api", designRoutes);
 app.use("/api", projectRoutes);
 app.use("/api", userRoutes);
 
+
 // Send requests to the React App
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+
+// Error-handling Middleware
+function typeErrorHandler(res) {
+    res.status(400).json( { message: "We were unable to perform that action at this time. Please try again later." });
+}
+
+app.use((err, req, res, next) => {
+    console.log(err.name);
+    if(err.name === "TypeError") typeErrorHandler(res);
+
+    const { status = 500, message = "Something went wrong" } = err;
+    res.status(status).json({ message: message });
+});
+
 
 
 const PORT = process.env.PORT || 3001;
