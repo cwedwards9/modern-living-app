@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import ContractorItem from "./ContractorItem";
 import NavBar from '../../components/NavigationBar';
 import axios from "axios";
+import errorHandler from "../../utils/ErrorHandler";
 import './Contractor.css';
 import ContractorImage from "../../images/ContractorMainPage.png";
 
 class ContractorSearch extends Component {
     constructor(props) {
         super(props);
-        this.state = {businesses: [], term: "", location: ""};
+        this.state = { businesses: [], term: "", location: "", message: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -30,6 +31,10 @@ class ContractorSearch extends Component {
         })
         .then(res => {
             this.setState({ businesses: res.data.jsonBody.businesses });
+        })
+        .catch(err => {
+            let errMessage = errorHandler(err);
+            this.setState({ message: errMessage });
         });
     }
     render() {
@@ -78,6 +83,13 @@ class ContractorSearch extends Component {
 
 
                 <section className="ContractorResults">
+                    {this.state.message
+                        ? <div className="user-log-msg">
+                            <p>{this.state.message}</p>
+                            <button onClick={() => this.setState({ message: "" })} >X</button>
+                        </div>
+                        : null
+                    }
                     <div className="ContractorsList">
                         {this.state.businesses.map(b => (
                             <ContractorItem

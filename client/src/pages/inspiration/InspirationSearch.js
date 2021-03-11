@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import InspirationItem from "./InspirationItem";
 import "./Inspiration.css";
 import axios from "axios";
+import errorHandler from "../../utils/ErrorHandler";
 import NavBar from '../../components/NavigationBar';
 
 
 class Inspiration extends Component {
     constructor(props) {
         super(props);
-        this.state = { designs: [], searchTerm: "", isSaved: false };
+        this.state = { designs: [], searchTerm: "", isSaved: false, message: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.saveDesign = this.saveDesign.bind(this);
@@ -30,6 +31,10 @@ class Inspiration extends Component {
         .then(res => {
             this.setState({ designs: res.data.results });
         })
+        .catch(err => {
+            let errMessage = errorHandler(err);
+            this.setState({ message: errMessage });
+        });
     }
     saveDesign(desc, url) {
         axios.post("/api/designs", { description: desc, url: url });
@@ -61,6 +66,14 @@ class Inspiration extends Component {
 
                 {/* Results */}
                 <section className="inspiration-results">
+                    {this.state.message
+                        ? <div className="user-log-msg">
+                            <p>{this.state.message}</p>
+                            <button onClick={() => this.setState({ message: "" })} >X</button>
+                        </div>
+                        : null
+                    }
+                    
                     {this.state.designs.map(d => (
                         <InspirationItem
                             key={d.id}
