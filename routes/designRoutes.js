@@ -10,7 +10,7 @@ const unsplash = createApi({ accessKey: accessKey, fetch: nodeFetch });
 
 
 // GET route for getting Unsplash API data
-router.get("/unsplash", (req, res) => {
+router.get("/unsplash", (req, res, next) => {
     unsplash.search.getPhotos({...req.query, perPage: 12, orientation: "landscape"})
     .then(result => {
         if (result.errors) {
@@ -21,24 +21,26 @@ router.get("/unsplash", (req, res) => {
             // handle success here
             res.json(result.response);
         }
-    });
+    })
+    .catch(next);
 });
 
 
 
 // Show all designs the user saved in favorites
-router.get("/designs", (req, res) => {
+router.get("/designs", (req, res, next) => {
     db.User.findById(req.user._id)
     .populate("designs")
     .then(foundUser => {
         res.json(foundUser.designs);
     })
+    .catch(next);
 });
   
 
 
 // Add/Save a new designs to the favorites
-router.post("/designs", (req, res) => {
+router.post("/designs", (req, res, next) => {
     db.User.findById(req.user._id)
     .then((foundUser) => {
         db.Design.create({...req.body, userid: req.user._id})
@@ -48,20 +50,24 @@ router.post("/designs", (req, res) => {
             foundUser.save();
             res.end();
         })
+        .catch(next)
     })
+    .catch(next);
 });
   
 
 
   // Delete a designs from favorites
-router.delete("/designs/:id", (req, res) => {
+router.delete("/designs/:id", (req, res, next) => {
     db.Design.findByIdAndDelete(req.params.id)
     .then(() => {
         db.User.updateOne({_id: req.user._id}, { $pull: { designs: req.params.id }})
         .then(() => {
             res.end();
         })
+        .catch(next)
     })
+    .catch(next);
 });
 
 module.exports = router;
