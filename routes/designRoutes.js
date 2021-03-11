@@ -15,8 +15,7 @@ router.get("/unsplash", (req, res, next) => {
     .then(result => {
         if (result.errors) {
             // handle error here
-            console.log('error occurred: ', result.errors[0]);
-            res.json("failed");
+            res.status(500).json({ message: "Unable to retrieve images at this time." });
         } else {
             // handle success here
             res.json(result.response);
