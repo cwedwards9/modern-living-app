@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import NavBar from '../../components/NavigationBar';
 import "./NewProjectForm.css";
 import axios from "axios";
+import errorHandler from "../../utils/ErrorHandler";
 
 class NewProjectForm extends Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", category: "", notes: "", estimated_cost: "", budget: "" };
+        this.state = { title: "", category: "", notes: "", estimated_cost: "", budget: "", message: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,10 +19,16 @@ class NewProjectForm extends Component {
     handleSubmit(evt) {
         evt.preventDefault();
 
-        axios.post("/api/projects", this.state)
+        const { title, category, notes, estimated_cost, budget } = this.state;
+
+        axios.post("/api/projects", { title, category, notes, estimated_cost, budget })
             .then(() => {
-                this.setState( { title: "", category: "", notes: "", estimated_cost: "", budget: "" } )
-            });
+                this.setState( { title: "", category: "", notes: "", estimated_cost: "", budget: "", message: "" } );
+            }) 
+            .catch(err => {
+                let errMessage = errorHandler(err);
+                this.setState({ message: errMessage });
+            })
     }
 
     render() {
@@ -29,6 +36,13 @@ class NewProjectForm extends Component {
             <div className="NewProjectPage">
                 <NavBar />
                 <div className="NewProject">
+                {this.state.message
+                    ? <div className="user-log-msg">
+                        <p>{this.state.message}</p>
+                        <button onClick={() => this.setState({ message: "" })} >X</button>
+                    </div>
+                    : null
+                }
                     <div className="NewProjectForm">
                         <form onSubmit={this.handleSubmit}>
                             <h1>New Project</h1>
@@ -66,7 +80,7 @@ class NewProjectForm extends Component {
                             <label htmlFor="cost">Cost</label>
                             <input
                                 id="cost"
-                                type="number"
+                                
                                 name="estimated_cost"
                                 value={this.state.estimated_cost}
                                 onChange={this.handleChange}
@@ -76,7 +90,7 @@ class NewProjectForm extends Component {
                             <label htmlFor="">Budget</label>
                             <input 
                                 id="budget"
-                                type="number"
+                                
                                 name="budget"
                                 value={this.state.budget}
                                 onChange={this.handleChange}

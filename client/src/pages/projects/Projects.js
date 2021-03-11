@@ -2,30 +2,39 @@ import React, { Component } from "react";
 import ProjectItem from "./ProjectItem";
 import NavBar from '../../components/NavigationBar';
 import axios from "axios";
+import errorHandler from "../../utils/ErrorHandler";
 import "./Project.css";
 
 class Projects extends Component {
     constructor(props) {
         super(props);
-        this.state = { projects: [] };
+        this.state = { projects: [], message: "" };
         this.deleteProject = this.deleteProject.bind(this);
         this.editProject = this.editProject.bind(this);
     }
-    // On page load (after render() ), get the projects from the db and set it to state
+    // Get projects from the db
     componentDidMount() {
         axios.get("/api/projects")
             .then(res => {
                 this.setState({projects: res.data});
             })
+            .catch(err => {
+                let errMessage = errorHandler(err);
+                this.setState({ message: errMessage });
+            })
     }
-    // Handle deletion of a project in the db and update state to reflect deletion
+    // Delete project in the db and update state
     deleteProject(id) {
         axios.delete(`/api/projects/${id}`)
             .then(() => {
                 this.setState({ projects: this.state.projects.filter(p => p._id !== id) });
             })
+            .catch(err => {
+                let errMessage = errorHandler(err);
+                this.setState({ message: errMessage });
+            })
     }
-    // Handle update of a project in the db and update the state to reflect the change of a project
+    // Update project in the db and update state
     editProject(id, updatedProj) {
         axios.put(`/api/projects/${id}`, updatedProj)
             .then(() => {
@@ -35,7 +44,11 @@ class Projects extends Component {
                     }
                     return project;
                 });
-                this.setState({ projects: updatedProjects });
+                this.setState({ projects: updatedProjects, message: "" });
+            })
+            .catch(err => {
+                let errMessage = errorHandler(err);
+                this.setState({ message: errMessage });
             })
     }
     render() {
@@ -43,6 +56,14 @@ class Projects extends Component {
             <div className="ProjectsPage">
                 <NavBar />
                 <div className="ProjectsList">
+                {this.state.message
+                    ? <div className="user-log-msg">
+                        <p>{this.state.message}</p>
+                        <button onClick={() => this.setState({ message: "" })} >X</button>
+                    </div>
+                    : null
+                }
+
                 {this.state.projects && this.state.projects.map(p => (
                     <ProjectItem 
                         key={p._id}
@@ -56,7 +77,7 @@ class Projects extends Component {
                         update={this.editProject}
                     />
                 ))}
-            </div>
+                </div>
             </div>
             
         );
